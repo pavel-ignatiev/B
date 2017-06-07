@@ -1,0 +1,342 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	3
+<table>
+Table1	30	6	9/28/16 3:28 PM
+geometry	50	50	445	220	
+header	1[X]	2[Y]	3[Y]	4[xEr]	5[yEr]	6[yEr]
+ColWidth	100	100	100	100	100	100	
+<com>
+<col nr="4">
+sqrt(col("2"))
+</col>
+<col nr="5">
+sqrt(col("3"))
+</col>
+</com>
+ColType	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13	0;0/13
+ReadOnlyColumn	0	0	0	0	0	0
+HiddenColumn	0	0	0	0	0	0
+Comments							
+WindowLabel		2
+<data>
+0	-5	96	0	0.5	9.797958971133	0
+1	-4.5	148	0	0.5	12.1655250606	0
+2	-4	262	2	0.5	16.18641405624	1.414213562373
+3	-3.5	327	2	0.5	18.08314132003	1.414213562373
+4	-3	458	2	0.5	21.40093455903	1.414213562373
+5	-2.5	476	0	0.5	21.81742422927	0
+6	-2	383	4	0.5	19.57038579078	2
+7	-1.5	296	2	0.5	17.20465053409	1.414213562373
+8	-1	201	4	0.5	14.17744687876	2
+9	-0.5	128	0	0.5	11.31370849898	0
+10	0	129	3	0.5	11.3578166916	1.732050807569
+11	0.5	67	0	0.5	8.185352771872	0
+12	1	53	0	0.5	7.280109889281	0
+13	1.5	50	0	0.5	7.071067811865	0
+14	2	40	0	0.5	6.324555320337	0
+15	2.5	45	2	0.5	6.708203932499	1.414213562373
+16	3	43	2	0.5	6.557438524302	1.414213562373
+17	3.5	48	2	0.5	6.928203230276	1.414213562373
+18	4	43	3	0.5	6.557438524302	1.732050807569
+19	4.5	30	2	0.5	5.477225575052	1.414213562373
+20	5	39	1	0.5	6.244997998398	1
+</data>
+</table>
+<multiLayer>
+Graph1	1	1	9/28/16 3:37 PM
+geometry	0	0	510	430	active
+WindowLabel	511kev	1
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	492	368
+<PageGeometry>0.00996016	0.013089	0.98008	0.963351</PageGeometry>
+PlotTitle		#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	Winkel bzgl. Line of Response, °	Anzahl der Ereignisse			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	4	5124	4	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Droid Sans	17	75	0	0	0
+ScaleFont0	Droid Sans	10	75	0	0	0
+ScaleFont1	Droid Sans	14	75	0	0	0
+ScaleFont2	Droid Sans	10	75	0	0	0
+ScaleFont3	Droid Sans	14	75	0	0	0
+AxisFont0	Droid Sans	14	50	0	0	0
+AxisFont1	Droid Sans	14	50	0	0	0
+AxisFont2	Droid Sans	14	50	0	0	0
+AxisFont3	Droid Sans	14	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#212121	#212121	#212121	#212121
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	Table1_1	Table1_2	1	0	#000000	0	1	3	1	#000000	#000000	0	#000000	14	1	2	0	0	29	1
+ErrorBars	0	Table1_1	Table1_2	Table1_4	1	8	#000000	1	1	1	0
+ErrorBars	1	Table1_1	Table1_2	Table1_5	1	8	#000000	1	1	1	0
+<Function>
+<Type>0</Type>
+<Title>GaussFit1</Title>
+<Expression>y0+A*sqrt(2/PI)/w*exp(-2*((x-xc)/w)^2)</Expression>
+<Variable>x</Variable>
+<Range>-5	5</Range>
+<Points>1000</Points>
+<Constant>A	1232.48055170943</Constant>
+<Constant>w	2.44312519519035</Constant>
+<Constant>xc	-2.58495923865668</Constant>
+<Constant>y0	42.6977725250095</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#ff0000</Color>
+	<Style>0</Style>
+	<Width>1.6</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	0	500	0	6	5	0	0
+scale	1	0	500	0	6	5	0	0
+scale	2	-6	6	0	7	5	0	0
+scale	3	-6	6	0	7	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	1	1	1
+<line>	-4.04267	242.839	-1.12732	242.839	1.9	#000000	DotLine	0	0	4	45	1	1</line>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.67379679144385</x>
+<y>481.34328358209</y>
+<right>5.29411764705882</right>
+<bottom>375</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)Messung
+\l(4)Gauss-Fit
+</Text>
+<Font>Droid Sans	10	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>-0.6</x>
+<y>271.89781021898</y>
+<right>3.63157894736842</right>
+<bottom>217.153284671533</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+σ<sub>FWHM</sub> = 2,9154°
+</Text>
+<Font>Droid Sans	12	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>0</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<multiLayer>
+Graph2	1	1	9/28/16 3:42 PM
+geometry	580	115	545	467	
+WindowLabel	511kev und 1275kev	1
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	527	404
+<PageGeometry>0.00931099	0.0119332	0.981378	0.9642</PageGeometry>
+PlotTitle		#000000	4228
+<Antialiasing>0</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	Winkel bzgl. der Line of Response, °	Anzahl der Ereignisse je 30 s			
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Droid Sans	12	75	0	0	0
+ScaleFont0	Droid Sans	10	75	0	0	0
+ScaleFont1	Droid Sans	10	75	0	0	0
+ScaleFont2	Droid Sans	10	75	0	0	0
+ScaleFont3	Droid Sans	10	75	0	0	0
+AxisFont0	Droid Sans	10	50	0	0	0
+AxisFont1	Droid Sans	10	50	0	0	0
+AxisFont2	Droid Sans	10	50	0	0	0
+AxisFont3	Droid Sans	10	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#212121	#212121	#212121	#212121
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	Table1_1	Table1_3	1	0	#000000	0	1	7	1	#000000	#000000	0	#000000	14	1	2	0	0	29	1
+curve	Table1_1	Table1_2	1	0	#ff0000	0	1	7	2	#ff0000	#ff0000	0	#000000	14	1	2	0	0	29	1
+ErrorBars	0	Table1_1	Table1_3	Table1_4	1	8	#000000	1	1	1	0
+ErrorBars	0	Table1_1	Table1_2	Table1_4	1	8	#ff0000	1	1	1	1
+ErrorBars	1	Table1_1	Table1_2	Table1_5	1	8	#ff0000	1	1	1	1
+ErrorBars	1	Table1_1	Table1_3	Table1_6	1	8	#000000	1	1	1	0
+<Function>
+<Type>0</Type>
+<Title>GaussFit1</Title>
+<Expression>y0+A*sqrt(2/PI)/w*exp(-2*((x-xc)/w)^2)</Expression>
+<Variable>x</Variable>
+<Range>-5	5</Range>
+<Points>1000</Points>
+<Constant>A	1232.4805517094</Constant>
+<Constant>w	2.4431251951904</Constant>
+<Constant>xc	-2.5849592386567</Constant>
+<Constant>y0	42.697772525009</Constant>
+<Style>0</Style>
+<LineStyle>1</LineStyle>
+<Pen>
+	<Color>#008080</Color>
+	<Style>0</Style>
+	<Width>1.6</Width>
+</Pen>
+<xAxis>2</xAxis>
+<yAxis>0</yAxis>
+<CurveType>0</CurveType>
+<Visible>1</Visible>
+</Function>
+scale	0	-30	520	0	7	5	0	0
+scale	1	-30	520	0	7	5	0	0
+scale	2	-6	6	0	7	5	0	0
+scale	3	-6	6	0	7	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	1	1	1	1
+MinorTicks	1	1	1	1
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>-0.20095693779904</x>
+<y>475.91973244147</y>
+<right>-2.97841726618705</right>
+<bottom>443.293768545994</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)511 keV und 1275 keV
+\l(2)511 keV
+\l(7)Gauss-Fit
+</Text>
+<Font>Droid Sans	10	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<open>1</open>
+<log>
+[9/28/16 3:41 PM	Plot: ''Graph1'']
+Gauss Fit of dataset: Table1_2, using function: y0+A*sqrt(2/PI)/w*exp(-2*((x-xc)/w)^2)
+Weighting Method: Instrumental, using error bars dataset: Table1_5
+Scaled Levenberg-Marquardt algorithm with tolerance = 0.0001
+From x = -5.0000000000000e+00 to x = 5.0000000000000e+00
+A (area) = 1.2324805517094e+03 +/- 4.4929722275370e+01
+xc (center) = -2.5849592386567e+00 +/- 4.3878213998449e-02
+w (width) = 2.4431251951904e+00 +/- 8.6385450378265e-02
+y0 (offset) = 4.2697772525009e+01 +/- 3.1304200148749e+00
+--------------------------------------------------------------------------------------
+Chi^2/doF = 2.0540574446662e+00
+R^2 = 0.9909789398542
+Adjusted R^2 = 0.9887236748178
+RMSE (Root Mean Squared Error) = 1.433198327053
+RSS (Residual Sum of Squares) = 34.91897655932
+---------------------------------------------------------------------------------------
+Iterations = 10
+Status = success
+---------------------------------------------------------------------------------------
+[9/28/16 3:46 PM	Plot: ''Graph2'']
+Gauss Fit of dataset: Table1_2, using function: y0+A*sqrt(2/PI)/w*exp(-2*((x-xc)/w)^2)
+Weighting Method: Instrumental, using error bars dataset: Table1_5
+Scaled Levenberg-Marquardt algorithm with tolerance = 0.0001
+From x = -5.0000000000000e+00 to x = 5.0000000000000e+00
+A (area) = 1.2324805517094e+03 +/- 4.4929722275370e+01
+xc (center) = -2.5849592386567e+00 +/- 4.3878213998449e-02
+w (width) = 2.4431251951904e+00 +/- 8.6385450378265e-02
+y0 (offset) = 4.2697772525009e+01 +/- 3.1304200148749e+00
+--------------------------------------------------------------------------------------
+Chi^2/doF = 2.0540574446662e+00
+R^2 = 0.9909789398542
+Adjusted R^2 = 0.9887236748178
+RMSE (Root Mean Squared Error) = 1.433198327053
+RSS (Residual Sum of Squares) = 34.91897655932
+---------------------------------------------------------------------------------------
+Iterations = 10
+Status = success
+---------------------------------------------------------------------------------------
+
+
+</log>

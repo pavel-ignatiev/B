@@ -1,0 +1,595 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{geometry}
+\geometry{a4paper,left=2.0cm,right=2.0cm, top=2.5cm, bottom=3.0cm}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{floatflt}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfig}
+\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{extarrows}
+\usepackage{enumerate}
+\usepackage{mathabx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{xspace}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{cite}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{mhchem}
+\setlength{\headheight}{15pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentrierte Spalten mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbÃ¼ndig mit Breitenangabe
+\pagestyle{fancy}
+
+\lhead{\leftmark} %Textfeld links
+\rhead{} %Textfeld rechts
+
+\setlength{\skip\footins}{10mm}
+\usepackage{lastpage}
+\cfoot{Seite \thepage /\pageref{LastPage}}
+\usepackage{hyperref}
+\hypersetup {
+colorlinks,
+urlcolor=blue,
+linkcolor=blue
+}
+
+\newcommand{\footnoteremember}[2]{%
+  \footnote{#2\label{#1}}
+  \newcounter{#1}
+  \setcounter{#1}{\value{footnote}}%
+}
+\newcommand{\footnoterecall}[1]{%
+  \hyperref[#1]{\footnotemark[\value{#1}]}%
+}
+
+\newcommand{\element}[2]{%
+	$^{#1}$\text{#2}
+}
+
+\newcommand{\ele}[3]{
+	$^{#1}_{#2}$#3
+}
+
+\newenvironment{redtext}{\color{red}}{\ignorespacesafterend}
+
+\addto\captionsngerman{\renewcommand{\figurename}{\textbf{Abb.}}}
+
+\begin{document}
+\singlespacing
+\parindent0pt
+\onehalfspacing
+
+%Titelseite
+
+\begin{titlepage}
+
+\setlength{\unitlength}{1pt}
+
+\begin{center}
+\hbox{}
+
+{\hrule height 2pt \vspace{1cm}}
+{
+{\huge\textsc{"Uberstruktur in Cu$_3$Au}\\
+               \par}
+\vspace{1cm}
+{\hrule height 2pt}
+
+\vskip 4cm
+Physikalisches Praktikum B \\am \\2. physikalischen Institut\\
+
+\vspace{1cm}
+
+09.02.2016
+
+}
+
+
+\vspace{3cm}
+
+
+\begin{figure}[h!]
+	\centering
+ \includegraphics[scale=0.2]{grafiken/logo.png}
+\end{figure}
+
+%Bereich für Namen
+
+\begin{flushleft}
+\begin{tabular}{lll}
+& \textbf{Studenten} & \hspace{9cm} \textbf{Betreuer} \\
+
+& Ramin Karbalaie  & \hspace{9cm}   Simon Holbein\\
+& Yushi Nishida \\
+& Pavlo Ignatiev \\
+
+\end{tabular}
+\end{flushleft}
+
+%Bereich der Subline
+
+
+\vspace{1cm}
+
+{\hrule height 2pt}
+
+\vfill
+
+\end{center}
+
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+
+\newpage
+%================================================================================================================================
+
+%================================================================================================================================
+
+\section{Einleitung}
+
+In diesem Versuch haben wir Überstrukturen in einer bestimmten Legierung, Cu$_3$Au, beobachtet und analysiert. Überstrukturen zeichen sich dadurch aus, dass verschiedene Atomsorten nur bestimmte Typen von Untergitterplätzem besetzen und treten unterhalb einer bestimmten kritischen Temperatur $T_C$ auf. Die Verteilung der Atome oberhalb von $T_C$ erscheint eher regellos. \\
+Wir haben drei Proben auf zwei verschiedene Arten untersucht. Zunächst mittels des resistiven Verfahren und im Anschluss über die röntgenographische Methode. Zum genauen Verständnis haben wir zunächst die wichtigesten theoretischen Grundlagen zusammgefasst, bevor wir unsere Ergebnisse darstellen, analysieren und zum Schluss diskutieren.   
+
+\section{Theoretische Grundlagen}
+
+\subsection{Aufbau verschiedener Legierungen}
+
+
+\subsubsection{CuZn}
+
+Je nach stöchiometrischer Zusammensetzung kristallisiert CuZn in einem bcc-Gitter, oder auch sc-Gitter. Die Atome sind im ungeordneten Fall statistisch verteilt, im geordneten bilden andere Atomsorten Eck- und zentrierte Atome, wodurch ein sc-Gitter vorliegt.
+
+\subsubsection{CuAu}
+
+Kupfer und Gold in gleichen Anteilen (CuAu) bilden im ungeodneten Fall eine fcc-Gitterstruktur aus. In geordneter Struktur wechseln sich beide Atomsorten in aufeinanderfolgenden Schichten ab, jedoch ohne fcc-Struktur. Dadurch entsteht eine Verzerrung entlang der (001)-Achse, sodass man $\frac{c}{a} = 0.93$ beobachten kann.
+
+\subsubsection{Cu$_3$Au}
+
+In Cu$_3$Au, die Legierung die wir im Folgenden weiter untersuchen, besteht im ungeordneten Fall die Wahrscheinlichkeit (wie der Zusammensetzung zu entnehmen ist) ein Kupferatom an einem Gitterplatz vorzufinden $\frac{3}{4}$, ein Goldatom $\frac{1}{4}$, und zwar in einem fcc-Gitter. Im geordneten Fall liegt ein sc-Gitter mit dreiatomiger Basis vor. 
+
+\subsection{Ordnungsparameter und Phasenübergang}
+
+Erreicht man bei Erhitzen der Legierung eine bestimmte Temperatur (bei Cu$_3$Au ungefähr 385$^{\circ}$ C) löst sich die Ordnung auf und die Atome können ihre Gitterplätze können tauschen. Schreckt man die Probe ab, so haben die Atome keine Zeit zur Ordnung zurückzukehren. Bei langsamer Abkühlung dagegen, kann die Probe ihr Gleichgewicht erreichen, so dass die Ordnung zunimmt. Bei 0 K ist die maximal mögliche Ordnung erreicht. \\
+Der Ordnungsparameter beschreibt den Ordnungsgrad und ist abhängig von den Wahrscheinlichkeiten $p_A, p_B$, die angeben wie wahrscheinlich es ist, die jeweilige Atomsorte A oder B am Gitterplatz vorzufinden. Mit der Konzentration $c_A, c_B$ folgt daraus der Ordnungsparameter zu $$ s = \frac{p_A -c_A}{1-c_A} = \frac{p_B - c_B}{1-c_B}$$
+Im ungeordneten Fall ist $p_{A/B} = c_{A/B}$ so, dass $s = 0$ wird. Dagegen liegt im geordneten Fall $p_{A/B} = 1$, da Ordnung besagt, dass wir sagen können wo sich die Atome innerhalb eines Gitters befinden. Aus der Thermodynamik folgt, dass $s$ bei den jeweiligen Temperaturen die freie Energie $F = E - TS$ minimiert und dort somit das Gleichgewicht definiert.
+
+
+\subsection{Reziprokes Gitter}
+
+Die Basisvektoren des reziproken Gitter sind definiert als:
+
+\begin{align*}
+\vec{b}_1 = \frac{2 \pi}{V_E} \vec{a}_2 \times \vec{a}_3 \quad \vec{b}_2 = \frac{2 \pi}{V_E} \vec{a}_3 \times \vec{a}_1 \quad \vec{b}_3 = \frac{2 \pi}{V_E} \vec{a}_1 \times \vec{a}_2 
+\end{align*}
+Mit $\vec{a}$, den primitiven Basisvektoren des ursprünglichen Bravais-Gitters und $V_E$ dem Volumen einer Elementarzelle. Das reziproke Gitter eines sc-Gitters ist wieder ein sc-Gitter, das eines fcc-Gitters ist ein bcc-Gitter und das reziproke Gitter eines bcc ist ein fcc-Gitter. \\
+Aus der Laue-Bedingung $$\vec k - \vec k' = \Delta \vec k = \vec Q$$
+folgt, dass Reflexe nur dann konstruktiv interferieren, wenn die Differenz aus einfallender und ausfallendem Wellenvektor einem reziproken Gittervektor entspricht.
+
+
+\subsection{Entstehung von R"ontgenstrahlung}
+Als Röntgenstrahlung bezeichnen wir elektromagnetische Wellen mit Energien zwischen 5 und einigen hundert keV, welche den Wellenlängen im Bereich 1 -- 250 pm bzw. den Frequenzen im Bereich von 0,25 -- 60 EHz entsprechen. Im elektromagnetischen Spektrum liegen Röntgenstrahlen zwischen dem ultravioletten Licht und der $\gamma$-Strahlung. 
+
+Zwei grundsätzliche Arten der Röntgenstrahlung sind Bremsstrahlung und charakteristische Strahlung eines Atoms. 
+
+\subsubsection{Bremsstrahlung}
+Bremsstrahlung ist eine elektromagnetische Strahlung, welche durch beschleunigte Ladungsträger emittiert wird und sich durch ein kontinuierliches Spektrum auszeichnet. Die Bremsstrahlung lässt sich z. B. in einer Röntgenröhre erzeugen, indem eine Glühwendel Elektronen emittiert und diese dann durch eine Spannung beschleunigt werden. Beschleunigte Elektronen werden an einer Anode (z. B. Wolfram) abgebremst und emittieren dabei Energie in Form von Strahlung. Die emittierte Strahlung kann maximal die gesamte kinetische Energie des Elektrons mitnehmen. Wie können somit die kurzwellige Grenze des Spektrums für die angelegte Spannung $U$ bestimmen:
+\begin{align}
+\lambda_{min} = \frac{h \cdot c}{e \cdot U}
+\end{align}
+
+\subsubsection{Charakteristische Röntgenstrahlung}
+Dabei handelt es sich um die \textit{charakteristische Röntgenstrahlung}, welche beim Übergang zwischen Elektronenhüllen emittiert wird. Dieser Strahlungsart entsprechen scharfe Linien im Spektrum, welche einzelne Übergänge zwischen atomaren Energieniveaus charakterisieren. Um diese Strahlung zu erzeugen, wird zunächst ein Elektron an einem Atom gestreut. Das Elektron muss ausreichend Energie besitzen, um ein Elektron der üblicherweise inneren Schale des Atoms herauszuschlagen, mindestens soll jedoch die Energie ausreichen, um das Schalen-Elektron in eine höherenergetische Schale zu befördern. Verlässt ein atomares Elektron seine Schale (z. B. K -- Schale), so wird die entstehende Lücke durch ein Elektron aus einer höherenergetischen Schale (z. B. L -- Schale) gefüllt. Die Differenz zwischen den Schalenenergien beträgt typischerweise 1 -- 100 keV und wird als Röntgenstrahlung emittiert. Da die atomaren Energieniveaus diskret sind, sind auch die emittierten Energien diskret, was wir im Spektrum als scharfe Peaks beobachten. 
+%==========================================================================
+\subsection{Strukturanalyse mittels R"ontgendiffraktion}
+Geordnete Strukturen lassen sich mittels der Beugung von Röntgenstrahlen an ihrem Gitter auflösen. Die Wellenlänge der einfallenden Strahlung muss von der Größenordnung des atomaren Abstandes sein, damit die Beugung auftritt. Röntgenstrahlen eignen sich dafür besonders gut, weil ihre Wellenlänge gerade dem Atomabstand von der Größenordnung 1 \AA{} entspricht.
+
+Die einfallende Strahlung wird an der Elektronenhülle der Gitteratome gebeugt, die gebeugten Wellen können miteinander interferieren und man beobachtet ein materialspezifisches Interferenzbild. Beugung an verschiedenen Gitterebenen im Abstand $d$ zeichnet sich durch einen Gangunterschied  $ \Delta s = 2d \cdot \sin(\Theta) $ aus. Für eine konstruktive Interferenz muss der Gangunterschied ein Vielfaches der Wellenlänge sein: $\Delta s = n \cdot \lambda$. Somit erhalten wir die \textit{Bragg-Bedingung} für Beugung an den Netzebenen eines Kristalls:
+\begin{align} 
+n \lambda = 2d \cdot sin(\Theta) \label{bragg}
+\end{align}
+Hier bezeichnet $\Theta$ den Einfallswinkel der Strahlung relativ zu einer Netzebene, wie aus der Abb. \ref{bragg} ersichtlich: 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.28]{grafiken/bragg.png}
+	\caption{Beugung an Gitterebenen eines Festkörpers (Quelle: \href{https://de.wikipedia.org/wiki/R\%C3\%B6ntgenbeugung}{Wiki})}
+\end{figure}
+Für jede Netzebenenschar ist ein Beugungswinkel charakteristisch. Ist die Wellenlänge der Röntgenstrahlung bekannt, so lässt sich aus der Bragg-Gleichung der Netzebenenabstand $d_{hkl}$ bestimmen. 
+
+Alternativ lässt sich die Beugung am Kristall durch ein Laue-Modell beschreiben: Eine konstruktive Interferenz der Röntgenstrahlung wird demnach erreicht, wenn die Differenz der Wellenvektoren der einfallenden und der gebeugten Strahlung gerade einem reziproken Gittervektor entspricht: 
+\begin{align}
+G = k' - k
+\end{align}
+Für ein sc-Gitter können wir den Zusammenhang zwischen dem Gitterabstand $d$ und der Gitterkonstante $a$ wie folgt formulieren:
+\begin{align}
+d = \frac{a}{\sqrt{h²+k²+l²}}
+\end{align}
+Einsetzen dieser Relation in (\ref{bragg}) ergibt 
+\begin{align}
+\frac{sin²(\Theta)}{\lambda²} = \frac{h²+k²+l²}{4a²}
+\end{align}
+Hierbei haben wir den Faktor $n²$ in die Millerschen Indizes aufgenommen. An diesem Zusammenhang sehen wir, dass der Beugungswinkel von der Größe und der Form der Bravais-Einheitszelle abhängt. Um die Struktur des Kristalls zu untersuchen, können wir nun den Streuwinkel oder die Wellenlänge variieren. Es existieren verschiedene Methoden der Kristallographie; \textit{Debye-Scherrer-Methode} ist eine von ihnen und wird in diesem Versuch verwendet. 
+
+\subsubsection*{Debye-Scherrer-Methode}
+Diese Methode ist eine Pulvermethode, d. h. der zu untersuchende Körper liegt nicht als Einkristall, sondern als polykristallines Pulver vor. Hier wird der Beugungswinkel variiert und die Wellenlänge der Röntgenstrahlung fest eingestellt. Da die Probe als Pulver vorliegt, ist für ein Experiment eine deutlich größere Menge des Materials nötig, als bei einkristalliner Streuung. Dabei wird ausgenutzt, dass verschiedene Gitterebenen zu einem Reflex beitragen und somit eine ausreichend große Intensität der Reflexe gemessen wird. Dies ist ein Vorteil gegenüber der Bragg-Methode, mit welcher bestimmte Netzebenen eines Einkristalls durch Drehung untersucht werden können. Die witzigen Kristalle des Pulvers lassen es dagegen zu, praktisch \textit{alle} möglichen Netzebenen abzutasten. Außerdem ist diese Methode gegenüber der Methode von Laue vorteilhaft, weil weiße Röntgenstrahlung nicht monochromatisch ist und die Auswertung der Ergebnisse schwer ausfallen würde. 
+
+Um die Wahrscheinlichkeit eines Bragg-Reflexes zu erhöhen, wird das Kristallpulver bei der Debye-Scherrer-Methode zusätzlich in zylindrische Form gebracht und während der Bestrahlung gedreht. Damit das Spektrum eindeutig zu interpretieren ist, wird die Röntgen-Strahlung möglichst monochromatisch gehalten. 
+
+Die einfallende Strahlung wird durch das Pulver in alle Raumrichtungen gestreut. Ein Proportionalzählrohr fährt alle Streuwinkel $2\Theta$ ab (vgl. Abb. \ref{debye}) und nimmt dadurch die Intensitäten der gebeugten Röntgenstrahlen auf.  
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.4]{grafiken/debye.jpg}
+	\caption{Debye-Scherrer-Verfahren (Quelle: \href{http://www.spektrum.de/lexikon/chemie/roentgenstrukturanalyse/8031}{Spektrum})}
+	\label{debye}
+\end{figure}
+
+\subsection{Vierpunktmethode}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{grafiken/vierpunktmethode.png}
+	\caption{Darstellung der Vierpunktmethode (Quelle: \href{https://upload.wikimedia.org/wikipedia/commons/0/08/Fourpointprobe_GMR.png}{Wikipedia})}
+\end{figure}
+
+Die Vierpunktmethode ist für den Aufgabenteil zum resistiven Verfahren essentiell. Mit dieser Methode können wir den spezifischen Widerstand in Abhängigkeit von der Temperatur bestimmen. Hierbei werden vier Elektroden mit der Probenoberfläche in Kontakt gebracht, wobei wir zunächst diese Elektroden mit der Probe verlöten mussten. Durch die beiden äußeren Elektroden floß ein bekannter Strom, sodass das dadurch entstehende Potential durch die beiden inneren Elektroden abgegriffen werden konnte. 
+Der spezifische Wiederstand ergibt sich rechnerisch zu:
+\begin{align*}
+\rho	=	\frac{F \cdot R}{l}
+ \end{align*}
+mit der Fläche $F$, dem Widerstand $R$ nahe des absoluten Null, und der Länge $l$ der Probe. 
+%==========================================================================
+\subsection{Intensität der gestreuten Röntgenstrahlung}
+Wir haben festgestellt, dass der Beugungswinkel nur von der Größe und der Form der Einheitszelle abhängt. Der Ordnungsgrad $s$ der Probe hat aber immer noch Einfluss auf die Intensität der gebeugten Strahlung. Durch Messung der Intensitäten lässt sich umgekehrt der Ordnungsgrad der Probe bestimmen. Aufgrund des unterschiedlichen Streuvermögens von Atomen einer Legierung, wie CuAu, lassen sich auch die sog. Fundamentalstruktur und die Überstruktur unterscheiden. 
+
+Die Intensität setzt sich aus verschiedenen winkelabhängigen Faktoren zusammen:
+\begin{align}
+I_{hkl} \quad \propto \quad |F|²pL_PA_T
+\end{align}
+\subsection*{Atomformfaktor}
+Für die Streuwinkel war es irrelevant, ob die Ausdehnung der Streuzentren von der eines geometrischen Punktes abweicht. Die Ausdehnung eines Atoms ist jedoch gegenüber der Strahlungswellenlänge nicht zu vernachlässigen - Streuung der Röntgenstrahlung erfolgt nicht an Kernen, sondern an Elektronenhüllen. Dies führt zu einer Phasenverschiebung gegenüber den tatsächlichen Gitterplätzen, sodass die Intensitäten kleiner erscheinen, als es bei einem punktartigen Streuzentrum möglich wäre. Für jede Atomsorte kann man ein Maß für die Verkleinerung der Intensität als Atomformfaktor ausdrücken:
+\begin{align}
+f_i \quad = \quad \frac{\text{Amplitude der am i-ten Atom gebeugten Welle}}{\text{Amplitude der einfallenden Welle}}
+\end{align}
+\subsection*{Strukturfaktor}
+Die obige Bragg-Bedingung soll korrigiert werden, wenn statt eines monoatomaren Gitters ein Gitter mit mehratomiger Basis vorliegt: Die Basisatome stellen weitere Streuzentren der Strahlung dar. Streuung an verschiedenen Basisatome resultiert in verschiedenen Phasenverschiebungen bzgl. der einfallenden Strahlung. Wir wollen nun einen Ausdruck für den Strukturfaktor in Abhängigkeit von Millerschen Indizes ableiten.
+
+Betrachten wir eine Basis aus $n$ Atomen mit Atomformfaktoren $f_j$. Lassen wir das erste Atom mit dem Formfaktor $f_1$ genau auf dem Bravaisgitterpunkt sitzen, so setzt sich der Formfaktor der Basis aus folgenden Termen zusammen:
+\begin{align}
+F_{hkl} \quad = \quad f_1 + \sum_{j = 2}^n f_j \cdot e^{i\phi_j}
+\end{align}
+$\phi_j$ bedeutet hier die Phasenverschiebung der gebeugten Welle am j-ten Atom gegenüber dem Ursprung. Die Phasenverschiebung ist mit dem Gangunterschied über die Relation $\Delta \phi = \frac{2 \pi}{\lambda} \Delta s$ verbunden. Setzen wir hier den Ausdruck für den Gangunterschied und benutzen wir die Bragg-Gleichung unter der Annahme der 1. Beugungsordnung ($n = 1$), so ergibt sich für eine Phasenverschiebung zwischen Nachbargitterpunkten
+\begin{align}
+\Delta \phi = \frac{2 \pi}{\lambda} \Delta s = \frac{2 \pi}{\lambda} 2d \cdot \sin(\Theta) = \frac{4 \pi}{\lambda} \cdot \frac{n \lambda}{2} = 2 \pi
+\end{align}
+Wir wollen nun die Phasenverschiebungen der Basisatome mit ihren Koordinaten innerhalb des Gitters verbinden. Diese Koordinaten sind mit den Gitterkonstanten über $x_j' = x_j \cdot a, y_j' = y_j \cdot b, z_j' = z_j \cdot c$ verknüpft. Dabei sind $x_j$ usw. Koordinaten der Basisatome in Einheiten der Gitterkonstanten. Nun berücksichtigen wir Folgendes: Eine Ebenenschar mit Millerschen Indizes $hkl$ teilt $a$ in $h$, $b$ in $k$ und $c$ in $l$ gleiche Abschnitte ein. Wir bekommen dementsprechend
+\begin{align}
+\frac{\phi_j(x)}{2 \pi} = \frac{x_j \cdot a}{\frac{a}{h}} \Rightarrow \phi_j(x) = 2 \pi \cdot h \cdot x_j
+\end{align}
+Das gleiche gilt für $\phi_j(y)$ und $\phi_j(z)$, sodass der Strukturfaktor schließlich lautet
+\begin{align}
+F_{hkl} = f_1 + \sum_{j=2}^n f_j \cdot e^{2 \pi i \cdot (hx_j + ky_j + lz_j)}
+\end{align}
+Dieser Faktor ist komplex und geht in die Amplitude der gebeugten Welle ein, sodass die Intensität den Faktor $|F_{hkl}|^2$ beinhaltet. 
+\subsection*{Flächenhäufigkeitsfaktor}
+Mit diesem Faktor können wir bzgl. der Bragg-Reflexion gleichwertige Ebenen berücksichtigen. Z. B. gibt es in einem sc-Gitter 6 geometrisch verschiedene {100}-Ebenen, jeweils 2 davon sind jedoch parallel und gehören also zu einer Ebenenschar. Somit gibt es insgesamt nur $p = 3$ {100}-Ebenenscharen, welche bzgl. der Bragg-Reflexion äquivalent sind, weshalb die {100}-Reflexe eine Verdreifachung in ihrer Intensität aufweisen. $p$ ist dementsprechend ein Flächenhäufigkeitsfaktor. 
+\subsection*{Lorentz-Polarisationsfaktor}
+Die einfallende Röntgenstrahlung ist transversal polarisiert, daher emittieren die angeregten Elektronen schwächer in die Richtung senkrecht zur Einfallsrichtung, als in die Längsrichtung. Die Intensität der gebeugten Welle weist i. A. folgende Abhängigkeit von dem Beugungswinkel auf:
+\begin{align}
+I \quad \propto \quad \frac{1 + \cos^2(2 \Theta)}{2} = p
+\end{align}
+Genau gesehen sind die Streuwinkel nicht exakt, sondern zeigen eine Aufweitung. Diese Aufweitung resultiert sich in einer Unschärfe der mit dem Detektor aufgenommenen Linien, sodass sich die ursprüngliche Intensität auf eine Fläche verteilt, welche von der Spektralbreite der einfallenden Strahlung, der Detektorauflösung, den Rotationseffekten der Anordnung abhängt ($I \quad \propto \quad L = \frac{1}{2 \sin(\Theta)}$). Diese Effekte sowie die Polarisation werden im Lorentz-Polarisationsfaktor zusammengefasst:
+\begin{align}
+LP \quad = \quad \frac{1 + \cos^2(2 \Theta)}{4 \sin^2(\Theta) \cdot \cos(\Theta)}
+\end{align}
+\subsection*{Thermische und Absorptionseffekte}
+Thermische Bewegung der Atome verursacht eine Schwingung um die Gitterplätze, welche zu der Linienunschärfe des aufgenommenen Spektrums beiträgt. Insbesondere bei kleinen Netzebenenabständen spielt diese Schwingung eine zunehmende Rolle. 
+
+Eine Absorption der einfallenden Strahlung im Inneren des Körpers findet immer statt, Strahlungsenergie wird dabei in Wärme umgesetzt. Die Absorption verringert die Intensität der gebeugten Strahlung mit steigendem Strahlenweg durch das Material. Die beiden Faktoren werden im Faktor $A_T$ zusammengefasst. 
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Auswertung}
+\subsection{Röntgenographische Methode}
+Messung mittels dieser Methode erfolgte durch ein Röntgendiffraktometer, als Ergebnis lagen uns die im Folgenden analysierten Diffraktogramme vor. Eine der drei Proben soll vollständig ungeordnet mit S $\approx$ 0 sein, weil sie zunächst auf 500°C erhitzt und dann in kaltem Wasser abgeschreckt wurde, sodass sich wegen des sehr schnellen Phasenübergangs keine Ordnung ausbilden konnte. Eine andere Probe soll eine vollständige Überstruktur aufweisen, hierfür wurde sie ebenfalls auf 500°C erhitzt, konnte sich jedoch sehr langsam abkühlen. Die letzte Probe soll nun teilweise geordnet sein: Sie wurde zwei Stunden lang bei Temperatur 370°C gehalten und dann sehr schnell abgekühlt. Die Wahl der Temperaturen resultiert aus der Temperatur T$_C = 386$°C, welche den Übergang zwischen geordneter und ungeordneter Phase kennzeichnet.
+
+Die durch das Diffraktometer generierten Diffraktogramme beinhalten zwei Datenspalten: Die erste davon ist der doppelte Streuwinkel der einfallenden Röntgenstrahlung, die zweite ist die Zahl der registrierten Ereignisse im Szintillator, d. h. die Intensität der reflektierten Strahlung. Um eine Winkelverteilung der Intensitäten zu erhalten, plotten wir die zweite Spalte gegen die erste.
+
+Betrachten wir noch einmal die Bragg-Bedingung mit $M = h^2 + k^2 + l^2$, so ergibt sich für die Gitterkonstante der untersuchten Probe, ein kubisches Gitter vorausgesetzt:
+\begin{align}
+n \lambda = 2d \cdot \sin(\Theta) = \frac{2a \cdot \sin(\Theta)}{\sqrt{M}} \Longleftrightarrow a = \frac{n \lambda}{2sin(\Theta)} \sqrt{M}
+\end{align}
+Das Diffraktogramm beinhaltet verschiedene Peaks, welche wir den Fundamentalreflexen und Überstrukturreflexen zuordnen möchten. Hierfür beachten wir, dass Cu$_3$Au im ungeordneten Zustand ein fcc-Gitter darstellt, weil Cu- und Au-Atome ununterscheidbar sind. Die Strukturfaktorbetrachtung ergibt für diesen Zustand, dass nur Reflexe mit allen geraden oder allen ungeraden Millerschen Indizes möglich sind, während alle anderen wegen destruktiver Interferenz verschwinden. Der geordnete Zustand der Legierung lässt sich dagegen durch ein primitives Gitter beschreiben. In diesem Fall sind alle möglichen Indizes möglich, welche sich anhand von M ermitteln lassen. Beim Übergang zwischen geordnetem und ungeordnetem Zustand ändert sich die Gitterkonstante in erster Näherung nicht, wir nehmen sie als konstant an.  Da die Wellenlänge der verwendeten Röntgenstrahlen ebenfalls konstant bis auf die Feinstrukturaufspaltung bleibt, muss folgende Relation für zwei Reflexe gelten:
+\begin{align}
+2 \lambda \cdot a = \frac{M_1}{\sin_1^2(\Theta)} = \frac{M_2}{\sin_2^2(\Theta)}
+\end{align}
+Aus dem Winkelverhältnis lässt sich das Verhältnis für M erschließen und schließlich die zu einem Peak gehörenden Millerschen Indizes. 
+Als Röntgenquelle beim Diffraktometer dient die Cu-K$_\alpha$-Strahlung, welche wegen der Spin-Bahn-Kopplung in zwei Formen vorliegt: $\lambda_1 = 1{,}5406$ \AA{} und $\lambda_2 = 1{,}5444$ \AA{}, und zwar im Intensitätsverhältnis von 0.52. Diesen Sachverhalt möchten wir gebühren, indem wir einen gewichteten Mittelwert von zwei Wellenlängen berechnen:
+\begin{align}
+\lambda = \frac{\lambda_1 + 0{,}52 \cdot \lambda_2}{1{,}52} = 1{,}5419 \text{\AA}
+\end{align}
+Den Fehler für die Gitterkonstante geben wir hier als Standardabweichung des Mittelwerts an. 
+
+\subsubsection{Probe 1}
+%Diese Probe wurde zunächst auf 500°C erhitzt und anschließend in kaltem Wasser abgeschreckt, sodass sich in der kurzen Zeit keine signifikante Ordnung ausbilden konnte.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.3]{grafiken/probe1.png}
+	\caption{Hier sind die Überstrukturreflexe sehr schwach ausgebildet}
+	\label{probe1}
+\end{figure}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{cccc}
+			\hline
+			hkl 	& M  & $2\Theta$ [°]	& a [\AA{}] \\ 
+			\hline
+			\{100\} & 1  & 24{,}23		& 3{,}6734 \\ 
+			\{110\} & 2  & 38{,}31   		& 3{,}3228 \\ 
+			\{111\} & 3  & 41{,}88   		& 3{,}7363 \\ 
+			\{200\} & 4  & 48{,}61   		& 3{,}7462 \\ 
+			\{210\} & 5  & 53{,}65  	 	& 3{,}8201 \\ 
+			\{211\} & 6  & 64{,}47  		& 3{,}5404 \\ 
+			\{220\} & 8  & 71{,}25		& 3{,}7436 \\ 
+			\{221\} & 9  & 76{,}11		& 3{,}7521 \\ 
+			\{300\} & 9  & 76{,}11		& 3{,}7521 \\ 
+			\{310\} & 10 & 80{,}24		& 3{,}7834 \\ 
+			\{311\} & 11 & 86{,}04		& 3{,}7478 \\ 
+			\{222\} & 12 & 90{,}93		& 3{,}7466 \\ 
+			\{320\} & 13 & 96{,}92		& 3{,}7137 \\
+			\hline
+			\multicolumn{4}{c}{$<a> = 3{,}724$ \AA{}}\\
+			\hline
+			\multicolumn{4}{c}{$\Delta a = 0{,}167$ \AA{}}
+		\end{tabular}
+		\caption{Auswertung der 1{,} Probe}
+	\end{center}
+\end{table}
+
+\subsubsection{Probe 2}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.3]{grafiken/probe2.png}
+	\caption{Überstrukturreflexe sind deutlich erkennbar}
+	\label{probe2}
+\end{figure}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{cccc}
+			\hline
+			hkl 	& M  & $\Theta$ [°]	& a [\AA{}] \\ 
+			\hline
+			\{100\} & 1  & 23{,}86		& 3{,}7295 \\ 
+			\{110\} & 2  & 34{,}06   		& 3{,}7227 \\ 
+			\{111\} & 3  & 41{,}78   		& 3{,}7449 \\ 
+			\{200\} & 4  & 48{,}59   		& 3{,}7476 \\ 
+			\{210\} & 5  & 54{,}82  	 	& 3{,}7447 \\ 
+			\{211\} & 6  & 60{,}55  		& 3{,}7458 \\ 
+			\{220\} & 8  & 71{,}33		& 3{,}7400 \\ 
+			\{221\} & 9  & 76{,}24		& 3{,}7467 \\ 
+			\{300\} & 9  & 76{,}24		& 3{,}7467 \\ 
+			\{310\} & 10 & 81{,}1 		& 3{,}7501 \\ 
+			\{311\} & 11 & 86{,}08		& 3{,}7464 \\ 
+			\{222\} & 12 & 91{,}02		& 3{,}7437 \\ 
+			\{320\} & 13 & 95{,}86		& 3{,}7446 \\
+			\hline
+			\multicolumn{4}{c}{$<a> = 3{,}743$ \AA{}}\\
+			\hline
+			\multicolumn{4}{c}{$\Delta a = 0{,}008$ \AA{}}
+		\end{tabular}
+		\caption{Auswertung der 2{,} Probe}
+	\end{center}
+\end{table}
+
+\subsubsection{Probe 3}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.3]{grafiken/probe3.png}
+	\caption{Überstrukturreflexe sind nicht zu erkennen}
+	\label{probe3}
+\end{figure}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{cccc}
+			\hline
+			hkl		& M  & $\Theta$ [°] & a [\AA{}]\\ 
+			\hline
+			\{111\} & 3  & 41{,}87  		& 3{,}7401 \\ 
+			\{200\} & 4  & 48{,}64  		& 3{,}7469 \\ 
+			\{220\} & 8  & 71{,}29  		& 3{,}7447 \\ 
+			\{311\} & 11 & 86{,}07  		& 3{,}7497 \\ 
+			\{222\} & 12 &  91{,}02		& 3{,}7466 \\
+			\hline
+			\multicolumn{4}{c}{$<a> = 3{,}746$ \AA{}}\\
+			\hline
+			\multicolumn{4}{c}{$\Delta a = 0{,}004$ \AA{}}
+		\end{tabular}
+		\caption{Auswertung der Fundamentalreflexe für die 3{,} Probe}
+	\end{center}
+\end{table}
+\newpage
+Nun soll mit Hilfe der ermittelten Gitterkonstanten und der Millerschen Indizes der Ordnungsgrad der Proben ermittelt werden. Hierzu benutzen wir die Gleichung (5) aus der Versuchsanleitung:
+\begin{align}
+S^2 \quad = \quad \frac{I^{"U}}{I^F} \left( \frac{(f_{Au} + 3f_{Cu})^F }{(f_{Au} - f_{Cu} )^{"U} } \right)^2 \frac{(pL_P)^F}{(pL_P)^{"U}}
+\label{ordnungsparam}
+\end{align}
+Zur Bestimmung der Atomformfaktoren verwenden wir die numerische Formel (9) aus der Anleitung:
+\begin{align}
+f(s) \quad = \quad \sum_{i=1}^5 a_i e^{-b_i s^2} + c
+\end{align}
+Dabei bezeichnet $s = \sin(\Theta)/\lambda$ [\AA{}$^{-1}$] den Streuwinkel. Parameter $a_i$, $b_i$ und $c$ entnehmen wir der Tabelle 2 der Anleitung. Flächenhäufigkeitsfaktor p ist ebenfalls in der Tabelle 1 aufgeführt. 
+
+Die ermittelten Ordnungsparameter S aus der Gl. (\ref{ordnungsparam}) lassen sich in den nachfolgenden Tabellen einsehen. Die jeweiligen Überstrukturreflexe (Typ Ü) haben wir hierfür auf die passenden Fundamentalreflexe \{hkl\}$_{rel}^F$ bezogen. Aus den einzelnen Parametern S 
+haben wir einen Mittelwert gebildet und seine Standardabweichung berechnet. 
+\subsubsection{Probe 1}
+
+\begin{table}[H]
+	
+	\begin{center}
+		\begin{tabular}{cccccccccccccc}
+			\hline
+			Typ	&	\{hkl\}		&M	&$2\Theta$ [°]	&a [\AA]	&s		&$f_{cu}$	&$f_{au}$	&$I_{area}$	&p	&Lp	&S	& \{hkl\}$_{rel}^F$\\ \hline
+			"U	&\{100\}	&1	&24{,}23		&3{,}673		&0{,}136	&25{,}86	&72{,}49		&101{,}002	&6	&10{,}632	&0{,}748	&111\\
+			"U	&\{110\}	&2	&38{,}31		&3{,}323		&0{,}232		&22{,}37	&64{,}67		&29{,}711	&12	&3{,}257	&0{,}571	&111\\
+			F	&\{111\}	&3	&41{,}88		&3{,}736		&0{,}232		&22{,}37	&64{,}67		&588{,}621	&8	&3{,}257			&\\
+			F	&\{200\}	&4	&48{,}61		&3{,}746		&0{,}232		&22{,}37	&64{,}67		&697{,}07	&6	&3{,}257	&	&\\
+			"U	&\{210\}	&5	&53{,}65		&3{,}820		&0{,}293		&20{,}14	&59{,}96		&3{,}355	&24	&1{,}859		&0{,}152	&200\\
+			"U	&\{211\}	&6	&64{,}47		&3{,}540		&0{,}346		&18{,}27	&56{,}15		&56{,}298	&24	&1{,}232		&0{,}614	&220\\
+			F	&\{220\}	&8	&71{,}25		&3{,}744		&0{,}378		&17{,}21	&54{,}02		&471{,}779	&12	&1{,}000	&	&\\
+			"U	&\{221\}	&9	&76{,}11		&3{,}752		&0{,}400		&16{,}51	&52{,}61		&50{,}424	&24	&0{,}884		&0{,}712	&220\\
+			"U	&\{300\}	&9	&76{,}11		&3{,}752		&0{,}400		&16{,}51	&52{,}61		&50{,}424	&6	&0{,}884		&1{,}440	&220\\
+			"U	&\{310\}	&10	&80{,}24		&3{,}783		&0{,}418		&15{,}96	&51{,}49		&49{,}918	&24	&0{,}810		&0{,}725	&311\\
+			F	&\{311\}	&11	&86{,}04	&3{,}748		&0{,}442		&15{,}24	&50{,}04		&627{,}957	&24	&0{,}738		&	&\\
+			F	&\{222\}	&12	&90{,}93		&3{,}747		&0{,}462		&14{,}69	&48{,}91		&213{,}356	&8	&0{,}702		&	&\\
+			"U	&\{320\}	&13	&96{,}92		&3{,}714		&0{,}485		&14{,}08	&47{,}65		&55{,}682	&24	&0{,}683		&0{,}828	&222\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{}
+\end{table}
+			
+\begin{align*}
+<S> \quad = \quad 0.7248 \pm 0.356
+\end{align*}			
+
+\subsubsection{Probe 2}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{cccccccccccccc}
+			\hline
+			Typ	&	\{hkl\}		&M	&$2\Theta$ [°]	&a [\AA]	&s		&$f_{cu}$	&$f_{au}$	&$I_{area}$	&p	&Lp	&S	& \{hkl\}$_{rel}^F$\\ \hline
+			
+			"U	&\{100\}		&1	&23{,}86		&3{,}730		&0{,}134	&25{,}93	&72{,}65		&141{,}581	&6	&10{,}981		&0{,}870	&111\\
+			"U	&\{110\}		&2	&34{,}06	    &3{,}723		&0{,}190		&23{,}91	&68{,}09		&144{,}21	&12	&5{,}140			&0{,}960	&111\\
+			F	&\{111\}		&3	&41{,}78		&3{,}745		&0{,}231	&22{,}39	&64{,}72		&592{,}647	&8	&3{,}275			&	&\\
+			F	&\{200\}		&4	&48{,}59		&3{,}748		&0{,}267	&21{,}08	&61{,}91		&718{,}344	&6	&2{,}330			&	&\\
+			"U	&\{210\}		&5	&54{,}82		&3{,}745		&0{,}299		&19{,}93	&59{,}52		&150{,}689	&24	&1{,}770		&0{,}830	&200\\
+			"U	&\{211\}		&6	&60{,}55		&3{,}746		&0{,}327		&18{,}92	&57{,}47		&93{,}819	&24	&1{,}414			&0{,}677	&220\\
+			F	&\{220\}	    &8	&71{,}33		&3{,}740		&0{,}378	&17{,}20	&53{,}99		&541{,}046	&12	&0{,}998			&	&\\
+			"U	&\{221\}		&9	&76{,}24		&3{,}747		&0{,}400		&16{,}49	&52{,}57		&97{,}152	&24	&0{,}881			&0{,}933	&221\\
+			"U	&\{300\}		&9	&76{,}24		&3{,}747		&0{,}400		&16{,}49	&52{,}57		&97{,}152	&6	&0{,}881			&1{,}867	&220\\
+			"U	&\{310\}		&10	&81{,}1		&3{,}750		&0{,}422	&15{,}85	&51{,}27		&73{,}645	&24	&0{,}797		&0{,}880	&311\\
+			F	&\{311\}		&11	&86{,}08		&3{,}746		&0{,}443	&15{,}24	&50{,}03		&643{,}412	&24	&0{,}738			&	&\\
+			F	&\{222\}	  	&12	&91{,}02		&3{,}744	    &0{,}463		&14{,}68	&48{,}89		&94{,}259	&8	&0{,}701		&	&\\
+			"U	&\{320\}		&13	&95{,}86		&3{,}745		&0{,}481		&14{,}18	&47{,}87		&57{,}728	&24	&0{,}684			&1{,}262	&222\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\begin{align*}
+<S> \quad = \quad 1{,}0349 \pm 0{,}374
+\end{align*}			
+	
+
+Der Vergleich beider Ordnungsparameter für 1. und 2. Probe lässt vermuten, dass die 2. Probe tatsächlich die vollständig geordnete, die 1. Probe die teilweise geordnete Probe ist. Die Standardabweichungen der beiden Mittelwerte sind zwar relativ groß ausgefallen; Werte von S stark über 1 sind nicht selten. Der Vergleich dieser Werte mit den Ergebnissen der Widerstandsmessung soll einen weiteren Aufschluss über diese Sachverhalte geben.
+
+Bei der ersten Probe können wir den Ordnungsparameter nicht mit der Gl. (\ref{ordnungsparam}) ausrechnen, weil Bezugsreflexe dafür fehlen. Jedoch gerade die Abwesenheit bzw. die sehr kleinen Intensitäten der Überstrukturreflexe bei der 1. Probe lassen vermuten, dass es sich um eine vollständig ungeordnete Probe mit S $\approx$ 0 ist. 
+
+Wir fassen die ermittelten Werte noch einmal tabellarisch zusammen:
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{c|ccc}
+Probe	&	$<S>$		&	$\Delta S$	&	$\Delta S$ [\%]	\\
+\hline
+1		&	0{,}7248		&	0{,}356		&	49{,}11			\\
+2		&	1{,}0349		&	0{,}374		&	36{,}13		\\
+
+\end{tabular}
+\end{center}
+\end{table}
+\newpage
+
+\subsection{Das resistive Verfahren}
+
+In diesem Verfahren bestimmen wir mit der 4-Punkt-Methode den Widerstand der Probe in Abhängigkeit von der Temperatur. Dazu werden Drähte mit einer Silberleitpaste an die Probe geklebt, die gesamte Anordnung wird dann in einen Heliumbehälter langsam eingeführt. Dabei kühlt sich die Probe mit einer eingestellten Geschwindigkeit fast bis zur Null-Temperatur ab, sodass sich der temperaturunabhängige Anteil des Widerstandes aus dem Achsenabschnitt der geplotteten Daten ermitteln lässt. Hierfür werden die Daten mit geeigneten linearen Funktionen parametrisiert.
+Graphische Darstellung der Daten und die Fits sehen folgendermaßen aus:
+\begin{figure}[H]
+	\centering
+ \includegraphics[scale=0.4]{grafiken/geraden.png}
+\end{figure}
+ Aus dem Achsenabschnitt der Fitfunktionen lässt sich der Widerstand R der Proben bei Temperatur $\approx$ 0 K ermitteln. Der spezifischer Widerstand $\rho$ der Proben lässt sich anhand von R und den Abmessungen, der Fl"ache F, der jeweiligen Probe berechnen:
+\begin{align}
+\rho			&=	\frac{F \cdot R}{l}\\
+\Delta \rho	&= \rho \cdot \sqrt{(\frac{\Delta R}{R})^2 + (\frac{\Delta F}{F})^2 + (\frac{\Delta l}{l})^2}
+\end{align}
+Die Abmessungen wurden während des Versuchs mittels einer Schieblehre ermittelt:
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{c|c|c|c|c}
+			Probe	& b [$mm$]	& d [$mm$]  &Abstand [$mm$]  & Fläche[$mm^2$]\\
+			\hline
+			1		& $2{,}3\pm0{,}1$	&$0{,}405\pm0{,}01$ & $7{,}0\pm0{,}1$& $0{,}932\pm0{,}05$  \\ 
+			2		& $5{,}0\pm0{,}1$	&$0{,}250\pm0{,}014$ & $4{,}0\pm0{,}1$ & $1{,}25\pm0{,}07$ \\ 
+			3		& $5{,}0\pm0{,}1$	&$0{,}204\pm0{,}012$ &$7{,}0\pm0{,}1$ &	$1{,}02\pm0{,}06$
+		\end{tabular}
+	\end{center}
+\end{table}
+
+%\begin{align*}
+%f_1(x)&= (0.0799\pm 0,0295)*10^{-6}x  + (1099.5\pm 4.696)*10^{-6}  \\
+%f_2(x)&= (1.7465\pm 0,0140)*10^{-6}x + (386.3\pm 2.36)*10^{-6}  \\
+%f_3(x)&= (1.1439\pm 0,0069)*10^{-6}x  + (177.0\pm 1.11)*10^{-6}  
+%\end{align*}
+Der folgenden Tabelle lassen sich die Widerstandswerte entnehmen:
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{c|c|c}
+         Probe	& R [$\Omega$]				& $\rho \cdot 10^{-8}$ [$\Omega \cdot m$]\\
+         \hline
+         1		& $0{,}00019\pm(3{,}76*10^{-7})$	& $2{,}564\pm0{,}133$ \\
+         2		& $0{,}00026\pm(2{,}95*10^{-7})$	&  $8{,}073\pm0{,}52$ \\ 
+         3		& $0{,}00139\pm(3{,}13*10^{-7})$		& 	$20{,}3\pm1{,}29$
+    \end{tabular}
+\end{center}
+\end{table}
+Folgender Zusammenhang erlaubt es nun, die Ordnungsparameter der Proben anhand von ihren spezifischen Widerständen und der Konzentration x der Überstrukturstreuzentren in der Probe ermitteln - für Cu$_3$Au ist die Konzentration von Au-Streuzentren gerade x = 0{,}25:
+\begin{align*}
+\rho_{ungeordnet}&-\rho_{geordnet} \quad = \quad A \cdot x \cdot (1-x) \cdot S^2
+\quad \Leftrightarrow \quad S=\sqrt{\frac{\rho_{ungeordnet}-\rho_{geordnet}}{A \cdot x \cdot (1-x)}}
+\end{align*}
+Durch Gaußsche Fehlerfortpflanzung bestimmen wir auch den Fehler des Ordnungsparameters:
+\begin{align*}
+\Delta S = \sqrt{\frac{(\Delta \rho_{ungeordnet})^2+(\Delta \rho_{geordnet})^2}{A \cdot x \cdot (1-x)}+\frac{(\rho_{ungeordnet}-\rho_{geordnet}) \cdot (\Delta A)^2}{A^3 \cdot x \cdot (1-x)}}
+\end{align*}
+A bezeichnet hierbei eine materialspezifische Konstante, die zunächst unbekannt ist. Bei diesem Versuch sollen wir jedoch annehmen, dass die vollständig geordnete Probe den Ordnungsgrad S = 1 besitzt. Wir vermuten hier anhand von röntgenographischen Ergebnissen, dass die Probe 3 vollständig ungeordnet, die Probe 2 dagegen vollständig geordnet sei. Diese Vermutung erlaubt uns, den Parameter A abzuschätzen:
+\begin{align*}
+A \quad = \quad \frac{\rho_{ungeordnet}-\rho_{geordnet}}{S_{geordnet}^2 \cdot x \cdot (1-x)}, \qquad \Delta A \quad = \quad \frac{\sqrt{(\Delta \rho_{ungeordnet})^2 + (\Delta \rho_{geordnet})^2}}{S^2 \cdot x \cdot (1-x)}
+\end{align*}
+Demnach beträgt A $\left( 6{,}52 \pm 1{,}65 \right) \cdot 10^{-7}\,\Omega \cdot m$, und wir benutzen ihn zur Bestimmung der Ordnungsparameters der teilweise geordneten Probe:
+\begin{align*}
+S \quad = \quad 0{,}671 \pm 0{,}045
+\end{align*}
+\newpage
+\section{Diskussion}
+Durch Analyse der bereitgestellten Diffraktogrammen konnten wir bereits ohne weitere Messungen den Ordnungsgrad der Proben anhand von Intensitäten der Überstrukturreflexe vermuten. Die Zuordnung der Millerschen Indizes zu jeweiligen Maxima verlief problemlos. Die ermittelten Gitterkonstanten von Cu$_3$Au sind in guter Übereinstimmung zu den theoretischen Werten, einzelne Werte sind konsistent untereinander. Die Gitterkonstanten änderten sich nicht mit dem Ausbau einer Überstruktur, darin sehen wir eine Bestätigung der anfänglichen Hypothese über die Distribution der Atome abhängig vom Ordnungsgrad: Eine Überstruktur setzt Cu-Atome an bestimmten Gitterplätzen voraus, ändert jedoch die atomaren Zwischenabstände nicht. \\
+
+Ordnungsgrade der zweiten und der ersten Probe ließen sich durch röntgenographische Methode nur mit einer großer Standardabweichung von 36 bzw. 49 Prozent bestimmen. Für die vollständig geordnete Probe (Probe 2) liegt der theoretisch vorhergesagte Ordnungsgrad von S = 1 innerhalb der Fehlergrenzen. Auch wenn die Standardabweichung für den Ordnungsgrad der 1. Probe relativ groß ausfällt, kann man an den Mittelwerten eindeutig die Ordnung der Proben unterscheiden. Da die Überstrukturreflexe bei Probe 1 kleiner als bei Probe 2 ausfallen, vermuten wir jedoch eine vollständige Ordnung bei der Probe 2. \\
+
+Beim Widerstandsverfahren sieht man deutlich, dass die Probe 3 ungeordnet ist, weil ihr spezifischer Widerstand in der Nähe des absoluten Nullpunktes um Faktor 2,5 bzgl. der Probe 2 und um Faktor 8 bzgl. der Probe 1 größer ist. Den Aufschluss über die vollständig geordnete Probe gibt uns der Graph jedoch nicht. Laut dem Graphen sollte die Probe 1 vollständig geordnet sein, während das röntgenographische Verfahren eine vollständige Ordnung für die Probe 2 liefert. 
+
+
+\newpage
+\section{Quellverzeichnis}
+\begin{enumerate}
+\item Messdaten von F. Boge, C. Faber und M. Pukrop
+\item https://de.wikipedia.org/wiki/Drude-Theorie
+\item https://de.wikipedia.org/wiki/Messing
+\item Praktikumsanleitung zum Versuch B2.2 (http://www.ph2.uni-koeln.de/394.html)
+\item Gross, R. \& Marx, A.: Festkörperphysik
+\item Ashcroft, N. W., Mermin, N. D.: Solid state physics
+\end{enumerate}
+\end{document}

@@ -1,0 +1,26 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Theoretische Grundlagen}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Kernzerfall und Strahlungsemission}{3}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}$\beta $-Zerfall und Elektroneneinfang (EC)}{3}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Elektron-Positron-Paarbildung und Annihilation}{3}{subsubsection.1.1.2}
+\contentsline {subsection}{\numberline {1.2}Kennlinien eines Strahlungsspektrums}{3}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Photopeak}{4}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Compton-Kontinuum}{4}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Compton-Kante}{4}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}Single-, Double-Escape-Peak, 511-keV-Linie}{5}{subsubsection.1.2.4}
+\contentsline {subsubsection}{\numberline {1.2.5}R\"uckstreupeak}{5}{subsubsection.1.2.5}
+\contentsline {subsection}{\numberline {1.3}Szintillatoren}{6}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Photomultiplier}{6}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Verst\"arker}{6}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Diskriminatoren}{6}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Time-to-Amplitude Converter}{7}{subsection.1.7}
+\contentsline {subsection}{\numberline {1.8}Delay}{7}{subsection.1.8}
+\contentsline {section}{\numberline {2}Versuchsdurchf\"uhrung und Auswertung}{8}{section.2}
+\contentsline {subsection}{\numberline {2.1}Vorverst"arkersignal}{8}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Hauptverst\"arkersignal}{9}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Diskriminatorsignal}{10}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Ortsaufl"osung der Koinzidenzmessung}{11}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}PET-Scan der Truhe}{12}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Winkelabh"angigkeit}{14}{subsection.2.6}
+\contentsline {section}{\numberline {3}Fazit}{16}{section.3}
+\contentsline {section}{\numberline {4}Literatur}{17}{section.4}

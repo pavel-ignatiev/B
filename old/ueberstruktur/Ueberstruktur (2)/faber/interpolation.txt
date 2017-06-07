@@ -1,0 +1,2 @@
+linear 2 und 3 x=[4,30]
+linear 1,3 x=[4,20]

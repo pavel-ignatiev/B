@@ -1,0 +1,377 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{geometry}
+\geometry{a4paper,left=2.0cm,right=2.0cm, top=2.5cm, bottom=3.0cm}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{floatflt}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfig}
+\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{extarrows}
+\usepackage{enumerate}
+\usepackage{mathabx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{xspace}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{cite}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{mhchem}
+\setlength{\headheight}{15pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentrierte Spalten mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbÃ¼ndig mit Breitenangabe
+\pagestyle{fancy}
+
+\lhead{\leftmark} %Textfeld links
+\rhead{} %Textfeld rechts
+
+\setlength{\skip\footins}{10mm}
+\usepackage{lastpage}
+\cfoot{Seite \thepage /\pageref{LastPage}}
+\usepackage{hyperref}
+\hypersetup {
+colorlinks,
+urlcolor=blue,
+linkcolor=blue
+}
+
+\newcommand{\footnoteremember}[2]{%
+  \footnote{#2\label{#1}}
+  \newcounter{#1}
+  \setcounter{#1}{\value{footnote}}%
+}
+\newcommand{\footnoterecall}[1]{%
+  \hyperref[#1]{\footnotemark[\value{#1}]}%
+}
+
+\newcommand{\element}[2]{%
+	$^{#1}$\text{#2}
+}
+
+\newcommand{\ele}[3]{
+	$^{#1}_{#2}$#3
+}
+
+\newenvironment{redtext}{\color{red}}{\ignorespacesafterend}
+
+\addto\captionsngerman{\renewcommand{\figurename}{\textbf{Abb.}}}
+
+\begin{document}
+\singlespacing
+\parindent0pt
+\onehalfspacing
+
+%Titelseite
+
+\begin{titlepage}
+
+\setlength{\unitlength}{1pt}
+
+\begin{center}
+\hbox{}
+
+{\hrule height 2pt \vspace{1cm}}
+{
+{\huge\textsc{"Uberstruktur in }\\
+               \par}
+\vspace{1cm}
+{\hrule height 2pt}
+
+\vskip 4cm
+Physikalisches Praktikum B \\am \\2. physiklaieschen Institut\\
+
+\vspace{1cm}
+
+26.01.2015
+
+}
+
+
+\vspace{3cm}
+
+
+\begin{figure}[h!]
+	\centering
+ \includegraphics[scale=0.2]{grafiken/logo.png}
+\end{figure}
+
+%Bereich für Namen
+
+\begin{flushleft}
+\begin{tabular}{lll}
+& \textbf{Studenten} & \hspace{9cm} \textbf{Betreuer} \\
+
+& Ramin Karbalaie  & \hspace{9cm}   \\
+& Yushi Nishida \\
+& Pavlo Ignatiev \\
+
+\end{tabular}
+\end{flushleft}
+
+%Bereich der Subline
+
+
+\vspace{1cm}
+
+{\hrule height 2pt}
+
+\vfill
+
+\end{center}
+
+
+\end{titlepage}
+
+\listoffigures
+\tableofcontents
+
+\newpage
+%================================================================================================================================
+\section{Theoretische Grundlagen}
+\subsection{Aufbau von wichtigsten "Uberstrukturen in CuZn, CuAu, Cu$_3$Au}
+
+\subsubsection{CuZn}
+Messing mit einen 50/50 Kupfer/Zink verh"altnis bestehen aus einer sc-Struktur vom Kupfer und Zink. Sie sind so geordnet,  guckt man sich z.b. einen Kupfer Atom an sind 8 Zink Atome wie in einer bcc-Struktur um das Kuopfer Atom verteilt und genauso f"ur Zink nur dass sie vom Kupfer Atome umgeben sind.
+\subsubsection{CuAu}
+
+\subsubsection{Cu$_3$Au}
+%==========================================================================
+\subsection{Ordnungsparameter und Phasen"ubergang}
+%==========================================================================
+\subsection{Beschreibung von periodischen Strukturen}
+%==========================================================================
+\subsection{Entstehung von R"ontgenstrahlung}
+Als Röntgenstrahlung bezeichnen wir elektromagnetische Wellen mit Energien zwischen 5 und einigen hundert keV, welche den Wellenlängen im Bereich 1 -- 250 pm bzw. den Frequenzen im Bereich von 0,25 -- 60 Ehz entsprechen. Im elektromagnetischen Spektrum liegen Röntgenstrahlen zwischen dem ultravioletten Licht und der $\gamma$-Strahlung. 
+
+Zwei grundsätzliche Arten der Röntgenstrahlung sind Bremsstrahlung und charakteristische Strahlung eines Atoms. 
+\subsubsection{Bremsstrahlung}
+Bremsstrahlung ist eine lektromagnetische Strahlung, welche durch beschleunigte Ladungsträger emittiert wird und sich durch ein kontinuierliches Spektrum auszeichnet. Die Bremsstrahlung lässt sich z. B. in einer Röntgenröhre erzeugen, indem eine Glühwendel Elektronen emittiert und diese dann durch eine Spannung beschleunigt werden. Beschleunigte Elektronen werden an einer Anode (z. B. Wolfram) abgebremst und emittierren dabei Energie in Form von Strahlung. Die emittierte Strahlung maximal die gesamte kinetische Energie des Elektrons mitnehmen. Wie können somit die kurzwellige Grenze des Spektrums für die angelegte Spannung $U$ bestimmen:
+\begin{align}
+\lambda_{min} = \frac{h \cdot c}{e \cdot U}
+\end{align}
+
+\subsubsection{Charakteristische Röntgenstrahlung}
+Für ein Atom \textit{charakteristische Röntgenstrahlung}, welche beim Übergang zwischen Elektronenhüllen emittiert wird. Dieser Strahlungsart entsprechen scharfe Linien im Spektrum, welche einzelne Übergänge zwischen atomaren Energieniveaus charakterisieren. Um diese Strahlung zu erzeugen, wird zunächst ein Elektron an einem Atom gestreut. Das Elektron muss ausreichend Energie besitzen, um ein Elektron der üblicherweise inneren Schale des Atoms herauszuschlagen, mindestens soll jedoch die Energie ausreichen, um das Schalen-Elektron in eine höherenergetische Schale zu befördern. Verlässt ein atomares Elektron seine Schale (z. B. K -- Schale), so wird die entstehende Lücke durch ein Elektron aus einer höherenergetischen Schale (z. B. L -- Schale) gefüllt. Die Differenz zwischen den Schalenenergien beträgt typischerweise 1 -- 100 keV und wird als Röntgenstrahlung emittiert. Da die atomaren Energieniveaus diskret sind, sind auch die emittierten Energien diskret, was wir im Spektrum als scharfe Peaks beobachten. 
+%==========================================================================
+\subsection{Strukturanalyse mittels R"ontgendiffraktion}
+Geordnete Strukturen lassen sich mittels der Beugung von Röntgenstrahlen an ihrem Gitter auflösen. Die Wellenlänge der einfallenden Strahlung muss von der Größenordnung des atomaren Abstandes sein, damit die Beugung auftritt. Röntgenstrahlen eignen sich dafür besonders gut, weil ihre Wellenlänge gerade dem Atomabstand von der Größenordnung 1 \AA{} entspricht.
+
+Die einfallende Strahlung wird an der Elektronenhülle der Gitteratome gebeugt, die gebeugten Wellen können miteinander interferieren und man beobachtet ein materialspezifisches Interferenzbild. Beugung an verschiedenen Gitterebenen im Abstand $d$ zeichnet sich durch einen Gangunterschied  $ \Delta s = 2d \cdot sin(\Theta) $ aus. Für eine konstruktive Interferenz muss der Gangunterschied ein vielfaches der Wellenlänge sein: $\Delta s = n \cdot \lambda$. Somit erhalten wir die \textit{Bragg-Bedingung} für Beugung an den Netzebenen eines Kristalls:
+\begin{align} 
+n \lambda = 2d \cdot sin(\Theta) \label{bragg}
+\end{align}
+Hier bezeichnet $\Theta$ den Einfallswinkel der Strahlung relativ zu einer Netzebene, wie aus der Abb. \ref{bragg} ersichtlich. Für jede Netzebenenschar ist ein Beugungswinkel charakteristisch. Ist die Wellenlänge der Röntgenstrahlung bekannt, so lässt sich aus der Bragg-Gleichung der Netzebenenabstand $d_{hkl}$ bestimmen. 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.28]{grafiken/bragg.png}
+	\caption{Beugung an Gitterebenen eines Festkörpers (Quelle: \href{https://de.wikipedia.org/wiki/R\%C3\%B6ntgenbeugung}{Wiki})}
+\end{figure}
+\newpage
+Alternativ lässt sich die Beugung am Kristall durch ein Laue-Modell beschreiben: Eine konstruktive Interferenz der Röntgenstrahlung wird demnach erreicht, wenn die Differenz der Wellenvektoren der einfallenden und der gebeugten Strahlung gerade einem reziproken Gittervektor entspricht: 
+\begin{align}
+G = k' - k
+\end{align}
+Für ein sc-Gitter können wir den Zusammenhang zwischen dem Gitterabstand $d$ und der Gitterkonstante $a$ wie folgt formulieren:
+\begin{align}
+d = \frac{a}{\sqrt{h²+k²+l²}}
+\end{align}
+Einsetzen dieser Relation in (\ref{bragg}) ergibt 
+\begin{align}
+\frac{sin²(\Theta)}{\lambda²} = \frac{h²+k²+l²}{4a²}
+\end{align}
+Hierbei haben wir den Faktor $n²$ in die Millerschen Indizes aufgenommen. An diesem Zusammenhang sehen wir, dass der Beugungswinkel von der Größe und der Form der Bravais-Einheitszelle abhängt. Um die Struktur des Kristalls zu untersuchen, können wir nun den Streuwinkel oder die Wellenlänge variieren. Es existieren verschiedene Methoden der Kristallographie; \textit{Debye-Scherrer-Methode} ist eine von ihnen und wird in diesem Versuch verwendet. 
+
+\subsubsection*{Debye-Scherrer-Methode}
+Diese Methode ist eine Pulvermethode, d. h. der zu untersuchende Körper liegt nicht als Einkristall, sondern als polykristallines Pulver vor. Hier wird der Beugungswinkel variiert und die Wellenlänge der Röntgenstrahlung fest eingestellt. Da die Probe als Pulver vorliegt, ist für ein Experiment nur eine geringe Menge des Materials nötig. Dies ist ein Vorteil gegenüber der Bragg-Methode, mit welcher bestimmte Netzebenen eines Einkristalls durch Drehung untersucht werden können. Die witzigen Kristalle des Pulvers lassen es dagegen zu, praktisch \textit{alle} möglichen Netzebenen abzutasten. Außerdem ist diese Methode gegenüber der Methode von Laue vorteilhaft, weil eine Variierung der Wellenlänge der Röntgenstrahlung sehr aufwendig ist. 
+
+Um die Wahrscheinlichkeit eines Bragg-Reflexes zu erhöhen, wird das Kristallpulver bei der Debye-Scherrer-Methode zusätzlich in zylindrische Form gebracht und während der Bestrahlung gedreht. Damit das Spektrum eindeutig zu interpretieren ist, wird die Röntgen-Strahlung möglichst monochromatisch gehalten. 
+
+Die einfallende Strahlung wird durch das Pulver in alle Raumrichtungen gestreut. Ein Proportionalzählrohr fährt alle Streuwinkel $2\Theta$ ab (vgl. Abb. \ref{debye}) und nimmt dadurch die Intensitäten der gebeugten Röntgenstrahlen auf.  
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.4]{grafiken/debye.jpg}
+	\caption{Debye-Scherrer-Verfahren (Quelle: \href{http://www.spektrum.de/lexikon/chemie/roentgenstrukturanalyse/8031}{Spektrum})}
+	\label{debye}
+\end{figure}
+
+%==========================================================================
+\subsection{Intensität der gestreuten Röntgenstrahlung}
+Wir haben festgestellt, dass der Beugungswinkel nur von der Größe und der Form der Einheitszelle abhängt. Der Ordnungsgrad $s$ der Probe hat aber immer noch Einfluss auf die Intensität der gebeugten Strahlung. Durch Messung der Intensitäten lässt sich umgekehrt der Ordnungsgrad der Probe bestimmen.
+
+Die Intensität setzt sich aus verschiedenen winkelabhängigen Faktoren zusammen:
+\begin{align}
+I_{hkl} \quad \propto \quad |F|²pL_PA_T
+\end{align}
+\subsection*{Atomformfaktor}
+Für Untersuchung der Beugung war es irrelevant, ob die Ausdehnung der Streuzentren von der eines geometrischen Punktes abweicht. Die Ausdehnung eines Atoms ist jedoch gegenüber der Strahlungswellenlänge nicht zu vernachlässigen - Streuung der Röntgenstrahlung erfolgt nicht an Kernen, sondern an Elektronenhüllen. Dies führt zu einer Phasenverschiebung gegenüber den tatsächlichen Gitterplätzen, sodass die Intensitäten kleiner erscheinen, als es bei einem punktartigen Streuzentrum möglich wäre. Für jede Atomsorte kann man ein Maß für die Verkleinerung der Intensität als Atomformfaktor ausdrücken:
+\begin{align}
+f_i \quad = \quad \frac{\text{Amplitude der am i-ten Atom gebeugten Welle}}{\text{Amplitude der einfallenden Welle}}
+\end{align}
+\subsection*{Strukturfaktor}
+Die obige Bragg-Bedingung soll korrigiert werden, wenn statt eines monoatomaren Gitters ein Gitter mit mehratomiger Basis vorliegt: Die Basisatome stellen weitere Streuzentren der Strahlung dar. Streuung an verschiedenen Basisatome resultiert in verschiedenen Phasenverschiebungen bzgl. der einfallenden Strahlung. Wir wollen nun einen Ausdruck für den Strukturfaktor in Abhängigkeit von Millerschen Indizes ableiten.
+
+Betrachten wir eine Basis aus $n$ Atomen mit Atomformfaktoren $f_j$. Lassen wir den ersten Atom mit dem Formfaktor $f_1$ genau auf dem Bravaisgitterpunkt sitzen, so setzt sich der Formfaktor der Basis aus folgenden Termen zusammen:
+\begin{align}
+F_{hkl} \quad = \quad f_1 + \sum_{j = 2}^n f_j \cdot e^{i\phi_j}
+\end{align}
+$\phi_j$ bedeutet hier die Phasenverschiebung der gebeugten Welle am j-ten Atom gegenüber der Bravaisgitterpunkt. Die Phasenverschiedung ist mit dem Gangunterschied über die Relation $\Delta \phi = \frac{2 \pi}{\lambda} \Delta s$ verbunden. Setzen wir hier den Ausdruck für den Gangunterschied und benutzen wir die Bragg-Gleichung unter der Annahme der 1. Beugungsordnung ($n = 1$), so ergibt sich für eine Phasenverschiebung zwischen Nachbargitterpunkten
+\begin{align}
+\Delta \phi = \frac{2 \pi}{\lambda} \Delta s = \frac{2 \pi}{\lambda} 2d \cdot sin(\Theta) = \frac{4 \pi}{\lambda} \cdot \frac{n \lambda}{2} = 2 \pi
+\end{align}
+Wir wollen nun die Phasenverschiebungen der Basisatome mit ihren Koordinaten innerhalb des Gitters verbinden. Diese Koordinaten sind mit den Gitterkonstanten über $x_j' = x_j \cdot a, y_j' = y_j \cdot b, z_j' = z_j \cdot c$ verknüpft. Dabei sind $x_j$ usw. Koordinaten der Basisatome in Einheiten der Gitterkonstanten. Nun berücksichtigen wir Folgendes: Eine Ebenenschar mit Millerschen Indizes $hkl$ teilt $a$ in $h$, $b$ in $k$ und $c$ in $l$ gleiche Abschnitte ein. Wir bekommen dementsprechend
+\begin{align}
+\frac{\phi_j(x)}{2 \pi} = \frac{x_j \cdot a}{\frac{a}{h}} \Rightarrow \phi_j(x) = 2 \pi \cdot h \cdot x_j
+\end{align}
+Das gleiche gilt für $\phi_j(y)$ und $\phi_j(z)$, sodass der Strukturfaktor schließlich lautet
+\begin{align}
+F_{hkl} = f_1 + \sum_{j=2}^n f_j \cdot e^{2 \pi i \cdot (hx_j + ky_j + lz_j)}
+\end{align}
+Dieser Faktor ist komplex und geht in die Amplitude der gebeugten Welle ein, sodass die Intensität den Faktor $|F_{hkl}|^2$ beinhaltet. 
+\subsection*{Flächenhäufigkeitsfaktor}
+Mit diesem Faktor können wir bzgl. der Bragg-Reflexion gleichwertige Ebenen berücksichtigen. Z. B. gibt es in einem sc-Gitter 6 geometrisch verschiedene {100}-Ebenen, jeweils 2 davon sind jedoch parallel und gehören also zu einer Ebenenschar. Somit gibt es insgesamt nur $p = 3$ {100}-Ebenenscharen, welche bzgl. der Bragg-Reflexion äquivalent sind, weshalb die {100}-Reflexe eine Verdreifachung in ihrer Intensität aufweisen. $p$ ist dementsprechend ein Flächenhäufigkeitsfaktor. 
+\subsection*{Lorentz-Polarisationsfaktor}
+Die einfallende Röntgenstrahlung ist transversal polarisiert, daher emittieren die angeregten Elektronen schwächer in die Richtung senkrecht zur Einfallsrichtung, als in die Längsrichtung. Die Intensität der gebeugten Welle weist i. A. folgende Abhängigkeit von dem Beugungswinkel auf:
+\begin{align}
+I \quad \propto \quad 1 + cos^2(2 \Theta)
+\end{align}
+Genau gesehen sind die Streuwinkel nicht exakt, sondern zeigen eine Aufweitung. Diese Aufweitung resultiert sich in einer Unschärfe der mit dem Detektor aufgenommenen Linien, sodass sich die ursprüngliche Intensität auf eine Fläche verteilt, welche von der Spektralbreite der einfallenden Strahlung, der Detektorauflösung, den Rotationseffekten der Anordnung abhängt. Diese Effekte sowie die Polarisation werden im Lorentz-Polarisationsfaktor zusammengefasst:
+\begin{align}
+L_P \quad = \quad \frac{1 + cos^2(2 \Theta)}{sin^2(\Theta) \cdot cos(\Theta)}
+\end{align}
+\subsection*{Thermische und Absorptionseffekte}
+Thermische Bewegung der Atome verursacht eine Schwingung um die Gitterplätze, welche zu der Linienunschärfe des aufgenommenen Spektrums beiträgt. Insbesondere bei kleinen Netzebenenabständen spielt diese Schwingung eine zunehmende Rolle. 
+
+Eine Absorption der einfallenden Strahlung im Inneren des Körpers findet immer statt, Strahlungsenergie wird dabei in Wärme umgesetzt. Die Absorption verringert die Intensität der gebeugten Strahlung mit steigendem Strahlenweg durch das Material. Die beiden Faktoren werden im Faktor $A_T$ zusammengefasst. 
+\newpage
+%==========================================================================
+\subsection{Drude-Theorie und die Temperaturabh"angigkeit des Widerstandes}
+Die Druide Theorie beschreibt den Ladungstransport der Elektronen im Matallen durch einen elektrischen Feld. Die Elektronen sto"sen w"ahrend des Transports mit Gitterinonen und werden abgebremst. Die mittlere Sto"szeit der St"o"se entscheidet ueber die Leitungsf"ahigkeit der Metalle. Wird die Temperatur erh"oht so schwingen die Gitterionen st"arker und kollidieren h"aufiger mit den Elektronen. Somit steigt der Widerstand vom Material.
+
+\begin{align}
+as
+\end{align}
+
+\section{Auswertung}
+\subsection{Das r"ontgenmetrische Verfahren}
+
+\begin{align}
+n \lambda = 2 d_{hkl} \sin (\phi)
+\end{align}
+F"ur ein kubisches Gitter lautet der Gitterabstand:
+\begin{align}
+d_{hkl}=\frac{a}{\sqrt{h^2+k^2+l^2}}
+\end{align}
+Fasst man die beiden Formeln f"ur n=1 zusammen folgt:
+
+\begin{align}
+\lambda=2d_{hkl}\sin(\phi) \\
+\lambda=\frac{2asin(\phi)}{\sqrt{h^2+k^2+l^2}} \\
+a=\frac{\lambda\sqrt{h^2+k^2+l^2}}{2sin(\phi)}
+\end{align}
+Probe 1 \\
+Mittelwert	3.746	\\
+Standardabweichung 0.004 \\
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{|cccc|c|c|}
+        \hline
+        h & k & l & M  & $\phi$ & a \\ 
+        \hline
+        1 & 1 & 1 & 3  & 41.82  & 3.7414 \\ 
+        2 & 0 & 0 & 4  & 48.53  & 3.7520 \\ 
+        2 & 2 & 0 & 8  & 71.19  & 3.7464 \\ 
+        3 & 1 & 1 & 11 & 86.04  & 3.7478 \\ 
+        2 & 2 & 2 & 12 &  91.08 & 3.7418 \\
+        \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+Probe 2 \\
+Mittelwert 3.756	\\
+Standardabweichung 0.008 \\
+\begin{table}[H]
+\begin{center}
+
+    \begin{tabular}{|cccc|c|c|}
+        \hline
+        h & k & l & M  & $\phi$ & a \\ 
+        \hline
+        1 & 0 & 0 & 1  & 23.67  & 3.7590 \\ 
+        1 & 1 & 0 & 2  & 33.87  & 3.7430 \\ 
+        1 & 1 & 1 & 3  & 41.47  & 3.7716 \\ 
+        2 & 0 & 0 & 4  & 48.37  & 3.7636 \\ 
+        2 & 1 & 0 & 5  & 54.65  & 3.7555 \\ 
+        2 & 1 & 1 & 6  & 60.49  & 3.7491 \\ 
+        2 & 2 & 0 & 8  & 71.03  & 3.7537 \\ 
+        2 & 2 & 1 & 9  & 75.87  & 3.7622 \\ 
+        3 & 0 & 0 & 9  & 75.87  & 3.7622 \\ 
+        3 & 1 & 0 & 10 & 80.97  & 3.7550 \\ 
+        3 & 1 & 1 & 11 & 85.60  & 3.7633 \\ 
+        2 & 2 & 2 & 12 & 90.82  & 3.7501 \\ 
+        3 & 2 & 0 & 13 & 95.86  & 3.7446 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\end{table}
+
+
+Probe 3 \\
+Mittelwert 3.744	\\
+Standardabweichung	0.008 \\
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{|cccc|c|c|}
+        \hline
+        h & k & l & M  & $\phi$   & a \\ \hline
+        1 & 0 & 0 & 1  & 23.86    & 3.7341 \\ 
+        1 & 1 & 0 & 2  &  34.02   & 3.7270 \\ 
+        1 & 1 & 1 & 3  &  41.81   & 3.7423 \\ 
+        2 & 0 & 0 & 4  &  48.51   & 3.7534 \\ 
+        2 & 1 & 0 & 5  & 54.71   & 3.7517 \\ 
+        2 & 1 & 1 & 6  &  60.7   & 3.7374 \\ 
+        2 & 2 & 0 & 8  & 71.29   & 3.7418 \\ 
+        2 & 2 & 1 & 9  & 76.26   & 3.7458 \\ 
+        3 & 0 & 0 & 9  & 76.26   & 3.7458 \\ 
+        3 & 1 & 0 & 10 & 81.11   & 3.7497 \\ 
+        3 & 1 & 1 & 11 & 85.84   & 3.7548 \\ 
+        2 & 2 & 2 & 12 & 90.85   & 3.7492 \\ 
+        3 & 2 & 0 & 13 & 96.08   & 3.7381 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\end{table}
+
+
+
+
+\subsection{Das resistive Verfahren}
+\begin{figure}[H]
+	\centering
+ \includegraphics[scale=0.4]{grafiken/geraden.png}
+\end{figure}
+\begin{align*}
+f_1(x)&= 0.0799*10^{-6}x + 0.0010995 \\
+f_2(x)&= 1.7465*10^{-6}x + 0.0003863 \\
+f_3(x)&= 1.1439*10^{-6}x + 0.000177 
+\end{align*}
+
+
+
+\end{document}
+
+https://de.wikipedia.org/wiki/Drude-Theorie
+https://de.wikipedia.org/wiki/Messing

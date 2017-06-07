@@ -1,0 +1,130 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	4
+<matrix>
+Matrix1	10	10	1/6/16 1:08 PM
+geometry	50	164	1170	682	
+ColWidth	100
+<formula>
+
+</formula>
+TextFormat	f	0
+WindowLabel	xy	1
+Coordinates	-45	45	-45	45
+ViewType	0
+HeaderViewType	0
+ColorPolicy	0
+<data>
+0	80	60	150	130	310	7580	290	150	90	20
+1	464	348	870	754	1798	43964	1682	870	522	116
+2	6784	5088	12720	11024	26288	642784	24592	12720	7632	1696
+3	304	228	570	494	1178	28804	1102	570	342	76
+4	72	54	135	117	279	6822	261	135	81	18
+5	72	54	135	117	279	6822	261	135	81	18
+6	64	48	120	104	248	6064	232	120	72	16
+7	56	42	105	91	217	5306	203	105	63	14
+8	40	30	75	65	155	3790	145	75	45	10
+9	24	18	45	39	93	2274	87	45	27	6
+</data>
+</matrix>
+<matrix>
+Matrix2	11	10	1/6/16 2:12 PM
+geometry	404	525	1394	757	
+ColWidth	100
+<formula>
+
+</formula>
+TextFormat	f	13
+WindowLabel	xyz	1
+Coordinates	-45	45	-45	45
+ViewType	0
+HeaderViewType	0
+ColorPolicy	0
+<data>
+0	240	240	1050	1820	6200	629140	147610	10350	1800	140
+1	1856	2436	12180	15080	149234	22377676	116058	17400	3654	812
+2	47488	71232	254400	914992	13380592	44352096	491840	89040	53424	15264
+3	4256	4560	47310	251446	81282	576080	7714	3990	3078	608
+4	1440	4482	68715	8073	5580	47754	1827	1215	648	180
+5	5976	27486	9315	2340	1953	47754	2349	1080	810	108
+6	32576	3312	2400	728	1736	54576	1856	1200	432	80
+7	3864	840	735	637	1953	42448	2030	630	315	28
+8	800	210	525	585	1240	37900	870	375	90	40
+9	168	126	405	312	930	13644	435	90	108	6
+</data>
+</matrix>
+<SurfacePlot>
+Graph3	1/6/16 1:47 PM
+geometry	777	51	500	400	
+SurfaceFunction	matrix<Matrix1>	-45	45	-45	45	6	642784
+Style	box	nofloor	wireframe
+grids	0
+title		#000000	Droid Sans	12	50	0
+colors	#0000ff	#000000	#000000	#000000	#ffffff	#000000	#0000ff	#ff0000	1	
+axesLabels	x-Achse [mm]	y-Achse [mm]	Anzahl der Koinzidenzen
+tics	5	5	5	5	5	5
+tickLengths	9	5.4	9	5.4	9	5.4
+options	0	1	0
+numbersFont	Droid Sans	10	50	0
+xAxisLabelFont	Droid Sans	10	50	0
+yAxisLabelFont	Droid Sans	10	50	0
+zAxisLabelFont	Droid Sans	10	50	0
+rotation	27	0	-48
+zoom	371108
+scaling	0.0111111	0.0111111	1.55575e-06
+shift	0	0	0
+LineWidth	1.5
+WindowLabel	xy	1
+Orthogonal	0
+<ColorMap>
+	<Mode>1</Mode>
+	<MinColor>#0000ff</MinColor>
+	<MaxColor>#ff0000</MaxColor>
+	<ColorStops>1</ColorStops>
+	<Stop>0	#0000ff</Stop>
+</ColorMap>
+axisType	0	0	0
+<Grid>
+	<Major>1	#0000ff	0	1</Major>
+	<Minor>1	#c0c0c0	1	0.8</Minor>
+</Grid>
+<AxesNumberFormat>0	6	0	6	3	0	</AxesNumberFormat>
+</SurfacePlot>
+<SurfacePlot>
+Graph2	1/6/16 2:30 PM
+geometry	254	54	500	400	active
+SurfaceFunction	matrix<Matrix2>	-45	45	-45	45	6	4.43521e+07
+Style	box	nofloor	wireframe
+grids	0
+title		#000000	Droid Sans	12	50	0
+colors	#0000ff	#000000	#000000	#000000	#ffffff	#000000	#0000ff	#ff0000	1	
+axesLabels	x-Achse [mm]	y-Achse [mm]	Anzahl der Koinzidenzen
+tics	5	5	5	5	5	5
+tickLengths	9	5.4	9	5.4	9	5.4
+options	0	1	15
+numbersFont	Droid Sans	10	50	0
+xAxisLabelFont	Droid Sans	10	50	0
+yAxisLabelFont	Droid Sans	10	50	0
+zAxisLabelFont	Droid Sans	10	50	0
+rotation	27	0	-48
+zoom	2.56067e+07
+scaling	0.0111111	0.0111111	2.25468e-08
+shift	0	0	0
+LineWidth	1.5
+WindowLabel	xyz	1
+Orthogonal	0
+<ColorMap>
+	<Mode>1</Mode>
+	<MinColor>#0000ff</MinColor>
+	<MaxColor>#ff0000</MaxColor>
+	<ColorStops>1</ColorStops>
+	<Stop>0	#0000ff</Stop>
+</ColorMap>
+axisType	0	0	0
+<Grid>
+	<Major>1	#0000ff	0	1</Major>
+	<Minor>1	#c0c0c0	1	0.8</Minor>
+</Grid>
+<AxesNumberFormat>0	6	0	6	3	0	</AxesNumberFormat>
+</SurfacePlot>
+<open>1</open>

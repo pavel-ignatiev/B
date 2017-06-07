@@ -1,0 +1,25 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einleitung}{2}{section.1}
+\contentsline {section}{\numberline {2}Theoretische Grundlagen}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Aufbau verschiedener Legierungen}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}CuZn}{2}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}CuAu}{2}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Cu$_3$Au}{2}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Ordnungsparameter und Phasen\"ubergang}{2}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Reziprokes Gitter}{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Entstehung von R"ontgenstrahlung}{3}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Bremsstrahlung}{3}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Charakteristische R\"ontgenstrahlung}{4}{subsubsection.2.4.2}
+\contentsline {subsection}{\numberline {2.5}Strukturanalyse mittels R"ontgendiffraktion}{4}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Vierpunktmethode}{6}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Intensit\"at der gestreuten R\"ontgenstrahlung}{7}{subsection.2.7}
+\contentsline {section}{\numberline {3}Auswertung}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}R\"ontgenographische Methode}{10}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Probe 1}{11}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Probe 2}{12}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Probe 3}{13}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Probe 1}{15}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.5}Probe 2}{16}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Das resistive Verfahren}{17}{subsection.3.2}
+\contentsline {section}{\numberline {4}Diskussion}{19}{section.4}
+\contentsline {section}{\numberline {5}Quellverzeichnis}{20}{section.5}

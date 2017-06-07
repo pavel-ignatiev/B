@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE html [
+  <!ENTITY % newTabDTD SYSTEM "chrome://browser/locale/newTab.dtd">
+  %newTabDTD;
+  <!ENTITY % browserDTD SYSTEM "chrome://browser/locale/browser.dtd">
+  %browserDTD;
+  <!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd">
+  %globalDTD;
+]>
+<html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>New Tab</title>
+
+  <link rel="stylesheet" type="text/css" media="all" href="ausdruck_files/global.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="ausdruck_files/contentSearchUI.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="ausdruck_files/newTab_002.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="ausdruck_files/newTab.css" />
+</head>
+
+<body dir="ltr">
+  <div id="newtab-customize-overlay"></div>
+
+  <div class="newtab-customize-panel-container">
+    <div id="newtab-customize-panel" orient="vertical">
+        <div id="newtab-customize-panel-anchor"></div>
+        <div id="newtab-customize-panel-inner-wrapper">
+          <div id="newtab-customize-title" class="newtab-customize-panel-item">
+            <label>NEW TAB CONTROLS</label>
+          </div>
+
+          <div class="newtab-customize-complex-option">
+            <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item selectable" selected="true">
+                <label>Show your top sites</label>
+            </div>
+            <div id="newtab-customize-enhanced" class="newtab-customize-panel-subitem" selected="true">
+                <label class="checkbox"></label>
+                <label>Include suggested sites</label>
+            </div>
+          </div>
+          <div id="newtab-customize-blank" class="newtab-customize-panel-item selectable">
+            <label>Show blank page</label>
+          </div>
+          <div id="newtab-customize-learn" class="newtab-customize-panel-item">
+            <label>Learn about New Tab</label>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="newtab-intro-mask">
+    <div id="newtab-intro-modal">
+      <div id="newtab-intro-header"></div>
+      <div id="newtab-intro-body">
+        <div id="newtab-intro-content">
+          <div id="newtab-intro-text">
+            <p></p><p></p>
+          </div>
+        </div>
+        <div id="newtab-intro-buttons">
+          <input type="button" id="newtab-intro-button" default="true" onclick="gIntro._exitIntro()" />
+        </div>
+      </div>
+      <div id="newtab-intro-footer">
+        <ul>
+          <li id="newtab-intro-link"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div id="newtab-vertical-margin">
+      <div id="newtab-margin-top"></div>
+        <div id="newtab-margin-undo-container">
+          <div id="newtab-undo-container" undo-disabled="true">
+            <label id="newtab-undo-label">Thumbnail removed.</label>
+            <button id="newtab-undo-button" tabindex="-1" class="newtab-undo-button">Undo.</button>
+            <button id="newtab-undo-restore-button" tabindex="-1" class="newtab-undo-button">Restore All.</button>
+            <button id="newtab-undo-close-button" tabindex="-1" title="Hide"></button>
+          </div>
+        </div>
+
+      <div id="newtab-search-container">
+        <div id="newtab-search-form">
+          <div id="newtab-search-icon"></div>
+          <input type="text" name="q" id="newtab-search-text" aria-label="Search query" maxlength="256" dir="auto" autocomplete="off" aria-autocomplete="true" aria-controls="searchSuggestionTable" aria-expanded="false" placeholder="Search" />
+          <input type="button" id="newtab-search-submit" value="" aria-label="Submit search" />
+        <table hidden="" id="searchSuggestionTable" class="contentSearchSuggestionTable" role="presentation"><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchDefaultEngineHeader"><img src="blob:null/0d5d5ea7-775d-4534-96e5-68793294e9e7" />Google Search</td></tr><tr class="contentSearchSuggestionsContainer"><td class="contentSearchSuggestionsContainer"><table class="contentSearchSuggestionsList" role="listbox"></table></td></tr><table class="contentSearchOneOffsTable contentSearchSuggestionsContainer" role="group"><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchSearchWithHeader">Search with:</td></tr></table><button class="contentSearchSettingsButton contentSearchHeaderRow contentSearchHeader" id="contentSearchSettingsButton" aria-selected="false">Change Search Settings</button></table></div>
+      </div>
+
+      <div id="newtab-horizontal-margin">
+        <div class="newtab-side-margin"></div>
+
+        <div id="newtab-grid" style="width: 1550px; max-width: 1551px; height: 802px; max-height: 800px;"><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Mail :: Inbox
+https://webmail.uni-koeln.de/imp/dynamic.php?page=mailbox#mbox:SU5CT1g" href="https://webmail.uni-koeln.de/imp/dynamic.php?page=mailbox#mbox:SU5CT1g">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fwebmail.uni-koeln.de%2Fimp%2Fdynamic.php%3Fpage%3Dmailbox%23mbox%3ASU5CT1g&amp;revision=7171&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">webmail.uni-koeln.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="https://mail.zoho.com/" href="https://mail.zoho.com/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fmail.zoho.com%2F&amp;revision=5500&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">mail.zoho.com</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="PHCIPWiki
+http://www.ph-cip.uni-koeln.de/index.php/Hauptseite" href="http://www.ph-cip.uni-koeln.de/index.php/Hauptseite">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.ph-cip.uni-koeln.de%2Findex.php%2FHauptseite&amp;revision=7208&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">ph-cip.uni-koeln.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Forwarder
+http://www.ph-sbib.uni-koeln.de/" href="http://www.ph-sbib.uni-koeln.de/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.ph-sbib.uni-koeln.de%2F&amp;revision=7119&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">ph-sbib.uni-koeln.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Steve Pavlina - Personal Development for Smart People
+http://www.stevepavlina.com/" href="http://www.stevepavlina.com/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.stevepavlina.com%2F&amp;revision=2045&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">stevepavlina.com</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="files
+http://www.mediafire.com/physikkoeln" href="http://www.mediafire.com/physikkoeln">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.mediafire.com%2Fphysikkoeln&amp;revision=6947&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">mediafire.com</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Toggl - Time Tracker &amp; Employee Timesheet Software
+https://toggl.com/" href="https://toggl.com/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Ftoggl.com%2F&amp;revision=4787&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">toggl.com</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Elektronik, Autos, Mode, Sammlerstücke, Gutscheine und mehr Online-Shopping | eBay
+http://www.ebay.de/" href="http://www.ebay.de/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.ebay.de%2F&amp;revision=1333&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">ebay.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Sommersemester 2016: Vektoranalysis und lineare Algebra
+http://www.thp.uni-koeln.de/~berg/so16/index.html" href="http://www.thp.uni-koeln.de/%7Eberg/so16/index.html">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.thp.uni-koeln.de%2F~berg%2Fso16%2Findex.html&amp;revision=4121&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">thp.uni-koeln.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Jobs - CUPS 1.7.2
+http://trustysrv:631/jobs/" href="http://trustysrv:631/jobs/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Ftrustysrv%3A631%2Fjobs%2F&amp;revision=1934&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">trustysrv</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Dokumentation – Phcip-intern
+https://wiki.uni-koeln.de/phcip-intern/index.php/Dokumentation" href="https://wiki.uni-koeln.de/phcip-intern/index.php/Dokumentation">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fwiki.uni-koeln.de%2Fphcip-intern%2Findex.php%2FDokumentation&amp;revision=3466&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">wiki.uni-koeln.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Посолство на Германия София - Начална страница
+http://www.sofia.diplo.de/" href="http://www.sofia.diplo.de/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.sofia.diplo.de%2F&amp;revision=4236&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">sofia.diplo.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Kreissparkasse Köln: Ihre Sparkasse in Ihrer Nähe
+https://www.ksk-koeln.de/" href="https://www.ksk-koeln.de/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=https%3A%2F%2Fwww.ksk-koeln.de%2F&amp;revision=3477&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">ksk-koeln.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="AliExpress.com - Online Shopping for Electronics, Fashion, Home &amp; Garden, Toys &amp; Sports, Automobiles from China.
+http://www.aliexpress.com/" href="http://www.aliexpress.com/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.aliexpress.com%2F&amp;revision=5565&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">aliexpress.com</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="index
+http://www.mi.uni-koeln.de/~gmarines/" href="http://www.mi.uni-koeln.de/%7Egmarines/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail/?url=http%3A%2F%2Fwww.mi.uni-koeln.de%2F~gmarines%2F&amp;revision=3217&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">mi.uni-koeln.de</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div></div>
+
+        <div class="newtab-side-margin"></div>
+      </div>
+
+      <div id="newtab-margin-bottom"></div>
+  </div>
+      <input type="button" id="newtab-customize-button" dir="ltr" title="Customize your New Tab page" />
+</body>
+<script type="text/javascript;version=1.8" src="ausdruck_files/contentSearchUI.js"></script>
+<script type="text/javascript;version=1.8" src="ausdruck_files/newTab.js"></script>
+</html>

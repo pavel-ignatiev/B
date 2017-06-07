@@ -1,0 +1,456 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{geometry}
+\geometry{a4paper,left=2.0cm,right=2.0cm, top=2.5cm, bottom=3.0cm}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{floatflt}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage[labelfont=bf]{caption}
+\usepackage{xspace}
+\usepackage{pifont}
+\usepackage{cite}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{color}
+\setlength{\headheight}{15pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentrierte Spalten mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbÃ¼ndig mit Breitenangabe
+\pagestyle{fancy}
+
+\lhead{\leftmark} %Textfeld links
+\rhead{} %Textfeld rechts
+
+\setlength{\skip\footins}{10mm}
+\usepackage{lastpage}
+\cfoot{Seite \thepage /\pageref{LastPage}}
+\usepackage{hyperref}
+\hypersetup {
+colorlinks,
+urlcolor=blue,
+linkcolor=blue
+}
+
+\newcommand{\footnoteremember}[2]{%
+  \footnote{#2\label{#1}}
+  \newcounter{#1}
+  \setcounter{#1}{\value{footnote}}%
+}
+\newcommand{\footnoterecall}[1]{%
+  \hyperref[#1]{\footnotemark[\value{#1}]}%
+}
+
+\newcommand{\element}[2]{%
+	$^{#1}$\text{#2}
+}
+
+\newcommand{\ele}[3]{
+	$^{#1}_{#2}$#3
+}
+
+\newenvironment{redtext}{\color{red}}{\ignorespacesafterend}
+
+\addto\captionsngerman{\renewcommand{\figurename}{\textbf{Abb.}}}
+
+\begin{document}
+\singlespacing
+\parindent0pt
+\onehalfspacing
+
+%Titelseite
+
+\begin{titlepage}
+
+\setlength{\unitlength}{1pt}
+
+\begin{center}
+\hbox{}
+
+{\hrule height 2pt \vspace{1cm}}
+{
+{\huge\textsc{Riesenmagnetowiderstand \\ (GMR-Effekt)}\\
+               \par}
+\vspace{1cm}
+{\hrule height 2pt}
+
+\vskip 4cm
+Physikalisches Praktikum B \\am \\II. physikalischen Institut\\
+
+\vspace{1cm}
+
+01.12.2016
+
+}
+
+
+\vspace{3cm}
+
+
+\begin{figure}[h!]
+	\centering
+ \includegraphics[scale=0.2]{grafiken/logo.png}
+\end{figure}
+
+%Bereich für Namen
+
+\begin{flushleft}
+\begin{tabular}{lll}
+& \textbf{Studenten} & \hspace{9cm} \textbf{Betreuerin} \\
+
+& Yushi Nishida  & \hspace{9cm}   Andrea Bliesener\\
+& Pavlo Ignatiev\\
+
+\end{tabular}
+\end{flushleft}
+
+%Bereich der Subline
+
+
+\vspace{1cm}
+
+{\hrule height 2pt}
+
+\vfill
+
+\end{center}
+
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+
+\newpage
+%================================================================================================================================
+\shorthandoff{"}
+%================================================================================================================================
+
+\section{Einleitung}
+Magnetoresistive Effekte bezeichnen im Allgemeinen eine Widerstandsänderung des Materials als Antwort auf externe magnetische Felder. Dabei wird eine Vergrößerung des Widerstandes als positiver, eine Verkleinerung als negativer magnetoresistiver Effekt (MR) bezeichnet. Als Messgröße kommt z. B. die relative Widerstandsänderung in Frage: 
+\begin{align}
+MR = \frac{\Delta R}{R_0} \cdot 100\% = \frac{R(H) - R(0)}{R(0)} \cdot 100\%
+\label{MR}
+\end{align}
+Das besondere am GMR-Effekt ist sein Ausmaß: Die relative Widerstandsänderung des GMR beträgt bei Raumtemperatur $6$ bis $8 \, \%$ in Dreilagensystemen und bis zu $100 \, \%$ in Multilagensystemen. GMR-Effekt erlaubt daher z. B., hoch-empfindliche Magnetfeld- bzw. Stromsensoren zu entwickeln. 
+\section{Theoretische Grundlagen}
+\subsection{GMR-Effekt}
+GMR-Effekt wurde am Ende 1980er Jahre an Schichtsystemen bestehend aus ferromagnetischen und nicht-magnetischen Schichten beobachtet: Abhängig von der relativen Orientierung der Magnetisierungsfelder in den ferromagnetischen Schichten konnte man eine starke Änderung der Stromstärke und somit des Probenwiderstandes messen (siehe Bild unten). GMR wurde an Systemen mit und ohne ferromagnetischer Kopplung beobachtet. Man konnte feststellen, dass allein die antiparallele Orientierung der Magnetisierungsfelder den GMR-Effekt hervorrufen kann.  
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{grafiken/schichtsysteme.png}
+	\caption{Widerstandsänderung im externen Feld H (a) und Magnetisierungskurve des Schichtsystems (c) für verschiedene Arten der Zwischenschichtkopplung (b, schematisch)\\(Quelle: \href{https://arxiv.org/abs/1412.7691}{arxiv.org})}\label{fig:layer_systems}
+\end{figure}
+
+\subsubsection{Mikroskopische Ursachen}
+Der elektrische Widerstand in magnetisch geordneten Materialien ist stark von der Streuung der Elektronen am magnetischen Untergitter des Kristallgitters der Probe abhängig. Die Streuung ist von der gegenseitigen Ausrichtung der Elektronenspins und der magnetischen Momente der Untergitteratome abhängig: Sie ist am schwächsten bei ihrer gleichsinnigen Ausrichtung ($\vec{\mu} \parallel \vec{s}$) und am stärksten bei gegensinniger Ausrichtung dieser ($\vec{\mu} \nparallel \vec{s}$), wie in \autoref{fig:scattering} schematisch dargestellt:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{grafiken/scattering.png}
+	\caption{Spin-abhängige Elektronenstreuung in magnetischen Systemen und Ersatzschaltbilder für parallele und anti-parallele Kopplung\\(Quelle: \href{http://mcs.open.ac.uk/au73/gmr.html}{mcs.open.ac.uk})}\label{fig:scattering}
+\end{figure}
+Diese Beobachtung lässt sich durch das sog. "Zwei-Spinkanal-Modell" beschreiben: Der Strom $I$ durch die Probe wird in zwei Teilströme $I = I_{\uparrow} + I_{\downarrow}$ der Elektronen mit $s_{\uparrow}$ und $s_{\downarrow}$ zerlegt. Mit Hilfe der Ersatzschaltbilder aus \autoref{fig:scattering} kann man den Stromverlauf in der Probe nachvollziehen, wobei die Widerstände ein Maß für die Stärke der Streuung sind. Bezeichnen wir den Widerstand für parallele Ausrichtung des Elektronenspins und der Schichtmagnetisierung mit $R^+$, den für die antiparallele Ausrichtung mit $R^-$, so ergeben sich folgende Gesamtwiderstände für die Probe:
+\begin{itemize}
+\item parallele Ausrichtung der Magnetisierungen, Abb. 2 (links):
+\begin{align}
+R_p = (\frac{1}{R^+ + R^+} + \frac{1}{R^- + R^-})^{-1} = \frac{2R^+ R^-}{R^+ + R^-}
+\end{align}
+\item antiparallele Ausrichtung der Magnetisierungen, Abb. 2 (rechts):
+\begin{align}
+R_{ap} = (\frac{1}{R^+ + R^-} + \frac{1}{R^- + R^+})^{-1} = \frac{R^+ + R^-}{2}
+\end{align}
+\end{itemize}
+Wir sehen direkt, dass $R_{ap} > R_p$:
+\begin{align}
+R_{ap} - R_p = \frac{R^+ + R^-}{2} - \frac{2R^+ R^-}{R^+ + R^-} = \frac{(R^+ - R^-)^2}{2(R^+ + R^-)} \geq 0 \quad \Rightarrow \quad R_{ap} \geq R_p
+\end{align}
+Der GMR-Effekt ist dann folgendermaßen definiert:
+\begin{align}
+GMR = \frac{R_{ap} - R_p}{R_p} = \frac{(R^+ - R^-)^2}{4R^+ R^-} \geq 0
+\label{GMR}
+\end{align}
+\subsubsection{Vergleich mit anderen magneto-resistiven Effekten}
+\begin{itemize}
+
+\item \textbf{Anisotropischer Magnetowiderstand (AMR)}\\
+Der AMR beruht, wie der Name andeutet, auf einer richtungsabhägigen Streuung der Elektronen in ferromagnetischen Metallen. Fließen die Ströme senkrecht zum Magnetfeld, gibt es eine minimale Streuung; bei parallerer Anordnung wird sie i. A. maximal. Dieser Effekt wird durch die Änderung der Atomorbitale durch die Spin-Ausrichtung der Elektronen im Magnetfeld verursacht.
+
+\item \textbf{Tunnelmagnetowiderstand (TMR)}\\
+TMR wird an Systemen bestehend aus zwei Ferromagneten (getrennt durch einen Isolator) beobachtet. Ist der Isolator ausreichend dünn (nm-Bereich), können Elektronen zwischen den Ferromagneten durch den Isolator tunneln. Bei TMR wird die Tunnelwahrscheinlichkeit größer, wenn die Ferromagneten gleichsinnig magnetisiert sind, und viel kleiner bei antiparalleler Magnetisierung. Durch ein äußeres Magnetfeld kann die Magnetiserungsrichtung einzeln angepasst werden und die Änderung des Widerstandes ist somit beobachtbar. Anwendungsbeispiel für TMR ist der MRAM-Speicher, wo der minimale und der maximale Widerstand eines Tunnelschichtsystems jeweils die Zustände "0" oder "1" eines Bits widerspiegelt. 
+
+\item \textbf{Kolossaler Magnetowiderstand (CMR)}\\
+Das CMR Verfahren beruht auf die Beweglichkeit der Elektronen in Molekülen, wo gleiche chemische Elemente mit verschiedenen Anzahl an Valenzelektronen besetzt sind, also unterschiedliche Oxidationszahlen besitzen. Durch diese Beweglichkeit entsteht eine Unordnung die einen großen Widerstand induziert. Wirkt ein externes Magnetfeld auf das Molekül, so werden die Elektronen lokalisiert, die Ordnung wird größer und dadurch sinkt der Widerstand gewaltig.
+
+\end{itemize}
+\newpage
+
+\subsubsection{Zwischenschichtkopplung}
+Bei der Zwischenschichtkopllung werden ferromagnetische und antiferroamagnetische Partitionen mit einer dünnen Zwischenpartition mit senkrechtem magnetischen Feld dazwischen, nebeneinander gebracht. Dafür werden zwei ferromagnetische Schichten durch eine dicker werdende nichtmagnetische Schicht getrennt. Immer wenn die Schichtdicke das vielfache der Elektronenwellenlänge erreicht, passt ein Elektronenzustand mehr in die Schicht herein. Dabei ändert sich die Magnetisierungsrichtung so, dass die Gesamtenergie minimal bleibt. Diese periodische Änderung der Magnetisierungsrichtung erzeugt eine Zone zwischen zwei AFM Partitionen mit einer FM Partition dazwischen und umgekehrt eine Zone zwischen zwei FM Partitionen mit einer AFM Partition dazwischen, in den sich Spin up bzw. Spin down Elektronen wie in einem Potentialkasten verhalten.
+\newpage
+
+\subsection{GMR-Sensoren}
+\subsubsection{Spin-Valve-Systeme}
+Spin-Valve-Systeme arbeiten mit einer gepinnten hartmagnetischen Schicht und einer weichmagnetischen Schicht mit variabler Magnetisierungsrichtung, getrennt durch eine unmagnetische Schicht. I. A. sind dabei alle Schichten elektrisch leitend. Durch ein äußeres Magnetfeld wird die Magnetisierungsrichtung der weichmagnetischen Schicht verändert. Dabei ändert sich der Widerstand des Schichtsystems, zwischen einem Minimum (parallele Magnetisierung) und einem Maximum (antiparallele Magnetisierung). Auf diese Weise kann existenz kleinerer Magnetfelder nachgewiesen werden.
+\subsubsection{Prinzipieller Aufbau der GMR-Sensoren}
+Ein typischer GMR-Sensor besteht aus vier GMR-Resistoren, die in eine Wheatstone-Brücke zusammengeschaltet sind (siehe Bild unten). 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{grafiken/sensor-scheme.png}
+	\caption{Photomikrogramm eines GMR-Sensors (Quelle: \href{http://www.gmrsensors.com/gmr-operation.htm}{gmrsensors.com})}
+\end{figure}
+Zwei Messwiderstände ("sensing resistors") vergrößern ihren Widerstand im externen Magnetfeld, während die zwei Vergleichswiderstände ("reference resistors") vom externen Feld abgeschirmt sind und konstanten Widerstand haben. Als Abschirmung dient hier eine Ni-Fe-Legierung, welche durch ihre hohe magnetische Permeabilität die externen magnetischen Feldlinien um die Vergleichswiderstönde leitet. Ist die Wheatstone-Brücke im Vorfeld abgeglichen, d. h. die Spannung an der Brücke ist null, so lässt sich beim anbringen des Sensors in das externe Feld eine endliche Spannung an der Brücke messen. 
+\newpage
+
+\subsection{Messung des GMR-Effekts}
+\subsubsection{Methode der Vierpunktmessung}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{grafiken/vierpunktmethode.png}
+	\caption{Darstellung der Vierpunktmethode (Quelle: \href{https://upload.wikimedia.org/wikipedia/commons/0/08/Fourpointprobe_GMR.png}{Wikipedia})}
+\end{figure}
+
+Die Vierpunktmethode ist für den Aufgabenteil zum resistiven Verfahren essentiell. Mit dieser Methode können wir den spezifischen Widerstand in Abhängigkeit von der Temperatur bestimmen. Hierbei werden vier Elektroden mit der Probenoberfläche in Kontakt gebracht, wobei wir zunächst diese Elektroden mit der Probe verlöten mussten. Durch die beiden äußeren Elektroden floß ein bekannter Strom, sodass das dadurch entstehende Potential durch die beiden inneren Elektroden abgegriffen werden konnte. 
+Der spezifische Wiederstand ergibt sich rechnerisch zu:
+\begin{align*}
+\rho	=	\frac{F \cdot R}{l}
+ \end{align*}
+mit der Fläche $F$, dem Widerstand $R$ nahe des absoluten Null, und der Länge $l$ der Probe. 
+\subsubsection{Widerstand von Schichtsystemen mit und ohne Zwischenschichtkopplung}
+Der Widerstand mit einer Zwischenschichtkopplung ist deutlich höher, da dadurch unzählige abgetrennte Domänen entstehen, durch die die Elektronen tunneln müssen. Ohne einen Zwischenschicht gibt es quasi nur eine Domäne durch die getunnelt werden muss.
+\newpage
+
+\section{Versuchsaufbau}
+\subsection{Kalibration eines GMR-Sensors zur Strommessung}
+\begin{wrapfigure}{R}{0.35\textwidth}
+	\includegraphics[scale=0.7]{grafiken/4_1_scheme.png}
+	\caption{Schaltskizze des Versuchsaufbaus zur Strommessung}
+\end{wrapfigure}
+Zunächst kalibrieren wir einen GMR-Sensor der Firma NVE vom Typ AA003-02 für die Messung der Stromstärke in einem Leiter, der sich in einem Abstand $d$ zum Sensor befindet. Der Sensor selbst wird dabei an eine Batterie der Spannung $U_{Betrieb} = 7,378\,V$ angeschlossen. Der Leiter wird an einen Netzteil mit variabler Spannung $U_{in}$ über einen Widerstand der Größe $R = 0,1\,\Omega$ angeschlossen, sodass wir leicht die Stromstärke im Leiter $I_{in} = \frac{U_{in}}{R}$ bestimmen können.
+Induziert der Leiter einen Magnetfeld $H_{in}$ in der Umgebung des Sensors, sorgt der GMR-Effekt für eine Änderung des Widerstandes im Sensor. Bleibt der Batteriestrom am Sensor konstant (was wir in diesem Versuch als gegeben voraussetzen), so ändert sich dadurch der Spannungsabfall $U_{out}$ am Sensor. Diese Änderung $\Delta U_{out}$ wird in diesem Versuch gemessen.
+\subsection{Kalibration von zwei GMR-Sensoren zur Magnetfeldmessung}
+An zwei GMR-Sensoren der Firma NVE (AA005-02 und AAL002-02) soll die Sensorspannung abhängig vom externen Magnetfeld gemessen werden. Das externe Magnetfeld wird dabei durch folgende Spulen erzeugt: 
+\begin{itemize}
+\item \textbf{lange Spule:} Länge $L =\,$15 cm, $N =\,$705 Windungen, Drahtdurchmesser 1mm (Kupfer)
+\item \textbf{Helmholtz-Spule:} Spulenradius $R_{HH} =\,$65 mm
+\end{itemize}
+Für die beiden Messungen werden die Spulen, genauso wie im ersten Teil, an den Netzteill $U_{in}$ über den bekannten Widerstand $R = 0,1\,\Omega$ angeschlossen.
+Der Sensor wird in der Mitte der Spule positioniert und bei seiner Widerstandsänderung messen wir wieder die Änderung des Spannungsabfalls $\Delta U_{out}$. Dabei ist der Sensor über einen 1-Pol zu 2-Pol Adapter an den Eingang des Oszilloskops angeschlossen. Mit Hilfe der langen Spule soll zunächst die Empfindlichkeit $S$ der Sensoren gegenüber der Magnetfeldmessung bestimmt werden. Anhand dieser Kalibrierungskurven soll dann die Windungszahl der Helmholtzspule abgeleitet werden.
+\subsection{Messung des GMR-Effekts an Schichtsystemen}
+Das GMR-Effekt soll an einem Schichtsystem nachgewiesen werden. Hierfür legen wir einen konstanten Strom durch einen zu prüfenden Schichtsystem. Auf das Schichtsystem lässt man ein externes Magnetfeld wirken. Durch die Änderung der Spannung auf dem Schichtsystem kann nun der Widerstand ermittelt werden. Durch die Art der Widerstandsänderung kann der GMR-Effekt für einen Schichtsystem gezeigt oder widerlegt werden.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.15]{grafiken/gesamt.jpg}
+	\caption{Aufbau für die Messung des GMR-Effekts an Schichtsystemen}
+\end{figure}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Auswertung}
+\subsection{Kalibration eines GMR-Sensors zur Strommessung}
+Ziel dieses Teilversuchs ist es, die Sensitivität des GMR-Sensors gegenüber einer Strommessung zu bestimmen. Hierfür ist zunächst eine Umrechnung zwischen dem Leiterstrom und dem im Abstand $d$ durch diesen Strom erzeugten Magnetfeld $H$ nötig:
+\begin{align}
+H_{in} = \frac{I_{in}}{2 \pi d}\,\textrm{[A/m]} = \frac{4 \pi}{1000} \cdot \frac{I_{in}}{2 \pi d}\, \textrm{[Oe]} = \frac{2 I_{in}}{1000 \cdot d}\, \textrm{[Oe]}
+\end{align}
+Für den geschätzten Sensorabstand $d = (1 \pm 0,3)$ mm bekommen nun folgende graphische Darstellung der Hysteresekurven $U_{out}(H_{in})$:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=2.5]{grafiken/4.1/Trace1HU.png}
+	\caption{Hysteresekurve für den 1. Trace des Sensors}
+\end{figure}
+Die waagerechten Striche auf dem Graph sind abgeschätzte Fehlergrenzen für die Magnetfeldmessung, welche sich aus dem Messfehler für den Sensorabstand ergeben: 
+\begin{align}
+\Delta H_{in} = H_{in} \frac{\Delta d}{d} \, \textrm{[Oe]}
+\end{align}
+Außerdem sind auf dem Graph die farbigen Fitgeraden sichtbar, deren Steigung unmittelbar Aufschluss über Empfindlichkeit des Sensors gegenüber einer Änderung des Magnetfeldes gibt.
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=2.3]{grafiken/4.1/Trace2HU.png}
+	\caption{Hysteresekurve für den 2. Trace des Sensors}
+\end{figure}
+Anpassung der einzelnen Fitgeraden an die Zweige der Hystereseschleife ergibt eine absolute Empfindlichkeit des Sensors gegenüber der Magnetfeldänderung. Wir sind jedoch tatsächlich an einer Empfindlichkeit in $[\frac{\text{mV}}{\text{V} \cdot \text{Oe}}]$ interessiert, welche die relative Änderung des Spannungsabfalls am Sensor gegenüber der Magnetfeldänderung beschreibt.  
+\begin{align}
+S = \frac{1}{\Delta H_{in}} \frac{\Delta U_{out}}{U_{Betrieb}}\,[\frac{\text{mV}}{\text{V} \cdot \text{Oe}}]
+\label{sensitivity}
+\end{align}
+Empfindlichkeiten aus den einzelnen Fitgeraden sowie deren Mittelwerte und Standardabweichungen sind in der folgenden Tabelle aufgeführt.
+\begin{table}[H]
+\centering
+\begin{tabular}{ c | c | c }	
+    & Trace 1      & Trace 2	 \\
+  \hline
+  Fitgerade \# & \multicolumn{2}{c}{Empfindlichkeit [$\frac{\text{mV}}{\text{V} \cdot \text{Oe}}$]}\\
+  \hline
+  1 & 2.119 & 2.179\\
+  2 & 1.670 & 1.721\\
+  3 & 1.670 & 1.729\\
+  4 & 2.035 & 2.242\\
+  \hline
+  Mittelwert & 1.873 & 1.968\\
+  Fehler     & 0.238 & 0.281\\
+  Fehler [\%]& 12.7	 & 14.3\\
+\end{tabular}
+\caption{Empfindlichkeit des GMR-Sensors gegenüber Strommessung}
+\end{table}
+\newpage
+\subsection{Kalibration von zwei GMR-Sensoren zur Magnetfeldmessung}
+\subsubsection{Lange Spule}
+Zunächst wird das Magnetfeld einer bekannten langen Spule untersucht, hierfür wird wie im vorherigen Abschnitt die Spannungsänderung am Sensor gegen die Änderung des externen Magnetfeldes aufgetragen. Das Magnetfeld der langen Spule können wir folgendermaßen aus den Messgrößen ableiten:
+\begin{align}
+\Delta H_{in}\,\textrm{[Oe]} = \frac{4 \pi}{1000} \cdot \frac{N}{L} \cdot \Delta I_{in} = \frac{4 \pi}{1000} \cdot \frac{N}{L} \cdot \frac{\Delta U_{in}}{R}
+\end{align} 
+Kalibrierungskurven für GMR-Sensoren AA005-02 und AAL002-02 sehen folgendermaßen aus: 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{grafiken/4.2/lange-spule/sensor1.png}
+	\caption{Spannung am 1. Sensor in der Mitte der langen Spule}
+\end{figure}
+Die beiden Zweige der Hysteresekurven (\textcolor{violet}{violett} und \textcolor{orange}{orange} jeweils gekennzeichnet) sollten bei dieser Messung asymmetrisch bzw. nicht vollkommen symmetrisch ausfallen. Da wir jedoch nur jeweils einen Zweig pro Sensor aufgenommen haben (violett), plotten wir parallel zu dem gemessen Zweig auch sein spiegelverkehrtes Abbild geplottet (orange), um einem realen Hystereseverhalten Rechnung zu tragen.\\
+Die Hysteresekurven sind achsensymmetrisch um die Stelle $H_{in} = 0$ [Oe] und nehmen dort einen Maximum an. Wir beobachten lineares Verhalten der Sensoren für Magnetfelder in den Intervallen [-100 Oe, 100 Oe] (Sensor 1) bzw. [-15 Oe, 15 Oe] (Sensor 2). Außerhalb dieser Bereiche tritt eine rasche Sättigung ein. An die linearen Bereiche der Kurven (links und rechts vom Maximum) haben wir jeweils eine Gerade angepasst (schwarz) und deren Steigung bestimmt. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{grafiken/4.2/lange-spule/sensor2.png}
+	\caption{Spannung am 2. Sensor}
+\end{figure}
+Aus den Steigungen der einzelnen Zweige berechnen wir den mittleren Steigungsbetrag $\frac{\Delta U_{out}}{\Delta H_{in}}$, welcher wiederum eine Empfindlichkeit des Sensors gegenüber der Magnetfeldmessung an der Spule angibt. Ergebnisse dieser Rechnung fassen wir tabellarisch zusammen:
+\begin{table}[H]
+\centering
+\begin{tabular}{ c | c | c }	
+    & Sensor 1      & Sensor 2	 \\
+  \hline
+  Fitgerade \# & \multicolumn{2}{c}{Empfindlichkeit [$\frac{\text{mV}}{\text{Oe}}$]}\\
+  \hline
+  1 & 4.01 & 22.9\\
+  2 & 3.95 & 24.8\\
+  \hline
+  Mittelwert & 3.98 & 23.85\\
+  Fehler     & 0.04 & 1.34\\
+  Fehler [\%]& 0.94	& 5.63\\
+\end{tabular}
+\caption{Empfindlichkeit des GMR-Sensors gegenüber Magnetfeldmessung}
+\end{table}
+\newpage
+
+\subsubsection{Helmholtz-Spule}
+Sensitivität $S$ der Sensoren, die wir an der langen Spule ermittelt haben, beschreibt den Zusammenhang zwischen der Sensorspannungsänderung $\Delta U$ und der Magnetfeldänderung $\Delta H$. Aufgelöst nach $H$ ergibt sich daraus
+\begin{align}
+\Delta H_{in}\,\textrm{[Oe]} = \frac{1}{S} \cdot \Delta U_{out}
+\label{HH-Sensitivity}
+\end{align}
+Das Magnetfeld im Zentrum der Helmholtzspule beträgt andererseits
+\begin{align}
+H_{in}\,\textrm{[Oe]} = \frac{4 \pi}{1000} \cdot \frac{8 N}{\sqrt{125} R_{HH}} \cdot I_{in}
+\end{align}
+Einsetzen dieser Gleichung in \autoref{HH-Sensitivity} liefert einen Zusammenhang zwischen der Spannungsänderung am Sensor und dem Spulenstrom:
+\begin{align}
+\frac{4 \pi}{1000} \cdot \frac{8 N}{\sqrt{125} R_{HH}} \cdot \Delta I_{in} = \frac{1}{S} \cdot \Delta U_{out} \quad \Longleftrightarrow \quad \Delta U_{out} = \frac{4 \pi}{1000} \cdot \frac{8 \cdot S}{\sqrt{125} R_{HH}} \cdot N \cdot \Delta I_{in}
+\end{align}
+Dieser Zusammenhang ist wieder linear für bestimmte Intervalle der Stromwerte. Plotten von $\Delta U_{out}$ gegen $\Delta I_{in}$ und anschließende lineare Regression des Linearbereichs ergibt einen Mittelwert für die Windungszahl aus den Steigungen der Fitgeraden. Empfindlichkeit $S$ der jeweiligen Sensoren haben wir dafür bereits mit Hilfe der langen Spule ermittelt. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=2.3]{grafiken/4.2/helmholtz/sensor1.png}
+	\caption{Spannung am 1. Sensor in der Mitte der Helmholtzspule}
+\end{figure}
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=2.3]{grafiken/4.2/helmholtz/sensor2.png}
+	\caption{Spannung am 2. Sensor}
+\end{figure}
+Für die Windungszahlen der Helmholtzspule ergibt sich folgende Wertetabelle:
+\begin{table}[H]
+\centering
+\begin{tabular}{ c | c | c }	
+    & Sensor 1      & Sensor 2	 \\
+  \hline
+  Fitgerade \# & \multicolumn{2}{c}{Windungszahl}\\
+  \hline
+  1 & 571.6 & 573.9\\
+  2 & 544.3 & 566.8\\
+  \hline
+  Mittelwert & 558 & 570\\
+  Fehler     & 19 & 5\\
+  Fehler [\%]& 3.5 & 0.88\\
+\end{tabular}
+\caption{Empfindlichkeit des GMR-Sensors gegenüber Magnetfeldmessung}
+\end{table}
+Aus dem Mittelwert der beiden Windungszahlen ergibt sich also eine Windungszahl der Helmholtzspulen von $N =\,$ 564 $\pm$ 9 (1.55 \%).
+\newpage
+\subsection{Messung des GMR-Effekts an Schichtsystemen}
+Die Widerstandsänderung im externen Magnetfeld untersuchen wir an drei verschiedenen Multischichtproben. Die Probe, hier ein Plättchen bestehend aus einem Schichtsystem, wird in ein äußeres Magnetfeld gebracht, das man kennt und variabel verändern kann. Mit der Vier-Punkt-Methode wird dann der Widerstand des Plättchens bestimmt, dabei fließt ein konstanter Strom von 2 mA durch das Plättchen. Die Spannung auf dem Plättchen wird abgegriffen und man kann den Widerstand mit der simplen $R = \frac{U_{out}}{I_{in}}$ Formel bestimmen.
+
+\subsubsection{1. Probe}
+Die erste Probe zeigt einen untypischen Verlauf für ein Schichtsystem. Die Widerstandsmaxima (-350 Oe, 41.218 $\Omega$) bzw. (-18 Oe, 41.223 $\Omega$) liegen sehr weit auseinander, während der Widerstand eines GMR-Schichtsystems unabhängig von der Magnetfeldrichtung einen Maximum bei $\approx$ 0 Oe annehmen sollte. Das Widerstandsminimum liegt hier bei (-260 Oe, 41.191 $\Omega$)
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{grafiken/4.3/probe1.png}
+	\caption{Widerstandsverlauf an der ersten Probe}
+\end{figure}
+Obwohl die Probe in diesem Fall anscheinend defekt ist, sind die Widerstands\textit{werte} konsistent und wir können also die Änderung des Probenwiderstandes (bezogen auf das Minimum) beim Übergang von der antiparallelen zu der parallellen Ausrichtung der Schichtmagnetisierungen grob abschätzen (siehe \autoref{MR} bzw. \autoref{GMR}):
+\begin{align}
+\Delta R \, = \, (0.0295 \pm 0.0025) \, \Omega \quad (8.5 \, \%)
+\end{align}
+
+\newpage
+\subsubsection{2. Probe}
+Die zweite Probe zeigt einen typischen Verlauf für ein zwei Schichten System mit unterschiedlicher Koerzitivfeldstärke, wodurch zwei lokale Maxima bei (-20 Oe, 10.955 $\Omega$) und (20 Oe, 10.935 $\Omega$) mit Sättigungswiderständen jeweils von 10.74 $\Omega$ bzw. von 10.73 $\Omega$ entstehen. Die Magnetfelder im Schichtsystem liegen unterhalb der Koerzitivfeldstärke antiparallel, daher wird ein sehr großer Widerstand für kleine Magnetfelder gemessen. Wird das Magnetfeld größer, als die Koerzitivfeldstärke, so richten sich die Magnetfelder im Schichtsystem parallel aus, dadurch fällt der Widerstand rapide ab. Mit diesem Schichtsystem kann ein GMR-Sensor realisiert werden.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{grafiken/4.3/probe2.png}
+	\caption{Widerstandsverlauf an der zweiten Probe}
+\end{figure}
+Wir berechnen den GMR-Effekt auch für die 2. Probe:
+\begin{align}
+\Delta R \, = \, (0.210 \pm 0.007) \, \Omega \quad (3.4 \, \%)
+\end{align}
+\newpage
+\subsubsection{3. Probe}
+Die dritte Probe besitzt keinen Schichsystem und besteht nur aus einer Schicht. Dies erkennt man am einzigen globalen Maximum und der fast vollständigen Symmetrie der Hysteresekurve.
+\\
+\newline
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{grafiken/4.3/probe3.png}
+	\caption{Widerstandsverlauf an der dritten Probe}
+\end{figure}
+\newpage
+
+\section{Diskussion}
+\subsection{Kalibration zur Strommessung}
+Die gemessenen Werte der Empfindlichkeit für einen NVE-Sensor vom Typ AA003-02 sind mit $(1.873 \pm 0.238) \, \frac{\text{mV}}{\text{V} \cdot \text{Oe}}$ für Trace 1 und  $(1.968 \pm 0.281) \, \frac{\text{mV}}{\text{V} \cdot \text{Oe}}$ für Trace 2 etwas unter dem Katalogwert von $(2 - 3.2) \, \frac{\text{mV}}{\text{V} \cdot \text{Oe}}$, halten sich jedoch innerhalb von Fehlergrenzen auf. Die größte Fehlerquelle ist hierbei der abgeschätzte Abstand zwischen dem Sensor und dem Stromleiter: Die gesamte Schaltung befand sich in einem Plexiglas-Kasten, sodass der Abstand nur grob auf $(1 \pm 0.3)$ mm geschätzt wurde.
+
+\subsection{Kalibration zur Magnetfeldmessung}
+In diesem Teil sollten die jeweiligen Teilkurven für entsprechende Sensoren mittels einer Umpolung der Stromquelle aufgenommen werden. Stattdessen haben wir nur jeweils eine "Richtung" vermessen und die zweite Teilkurve dann durch Spiegelung an einer vertikalen Achse erstellt, daher beschreiben unsere Ergebnisse nur teilweise den realen Zusammenhang.\\
+Die aus der Fitgeraden abgeleitete Windungszahl der Helmholtz-Spule liefert mit $(564 \, \pm \, 9)$ Windungen eine realistische Abschätzung: Für einen Drahtdurchmesser von 1 mm, ca. 25 Windungen pro Lage und ca. 20 Lagen können wir die Windungszahl der Helmholtzspulen auf ca. 500 Windungen abschätzen, was mindestens in der Größenordnung mit dem Ergebnis der Auswertung übereinstimmt. 
+
+\subsection{Messung des GMR-Effektes}
+Die dritte Messreihe zur Bestimmung des GMR-Effektes bei Schichsystemen lieferte unterschiedlich gute Ergebnisse für einzelne Proben. Bei der ersten Probe divergierten die Widerstände bei Abwesenheit des externen Feldes, den GMR-Effekt konnten wir jedoch immerhin auf 8.5 \% abschätzen. Für die zweite Probe konnten wir die zu erwartende Abhängigkeit des Probenwiderstandes vom externen Feld feststellen; der GMR-Effekt betrug hier realistische 3.4 \%. Die zweite Probe zeigt ein etwas unsymmetrischen Verlauf, der durch einen etwas wackeligen Kontakt zwischen dem Schichtsystem und der Befestigung während der Messung entstehen könnte, da es überhaupt schwierig war einen festen Kontakt zwischen dem Schichtsystem und der Befestigung herzustellen damit ein geschlossener Stromkreis aufgebaut war. Bei der dritten Probe deutet der Kurvenverlauf auf ein Monoschicht-System.
+
+\newpage
+
+\section{Literatur}
+\begin{enumerate}
+\item \href{http://www.wmi.badw.de/teaching/Lecturenotes/}{Lecture Notes of Prof. Gross to the Lecture on "Spintronics"}
+\item \href{http://www.gmrsensors.com/gmr-operation.htm}{Allgemeine Beschreibung von GMR-Sensoren}
+\item \href{http://www.nve.com/Downloads/analog_catalog.pdf}{NVE analog sensors catalog}
+\item \href{https://en.wikipedia.org/wiki/Giant_magnetoresistance}{Giant magnetoresistance at Wikipedia}
+\item \href{https://en.wikipedia.org/wiki/Colossal_magnetoresistance}{Colossal magnetoresistance at Wikipedia}
+\item \href{https://en.wikipedia.org/wiki/Magnetoresistance}{Magnetoresistance at Wikipedia}
+\item \href{https://en.wikipedia.org/wiki/Wheatstone_bridge}{Wheatstone bridge at Wikipedia}
+\item \href{https://de.wikipedia.org/wiki/Vier-Punkt-Methode}{Vier-Punkte-Methode bei Wikipedia}
+\end{enumerate}
+\end{document}
+
+https://de.wikipedia.org/wiki/Drude-Theorie
+https://de.wikipedia.org/wiki/Messing

@@ -1,0 +1,201 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{geometry}
+\geometry{a4paper,left=2.0cm,right=2.0cm, top=2.5cm, bottom=3.0cm}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{floatflt}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfig}
+\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{extarrows}
+\usepackage{enumerate}
+\usepackage{mathabx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{xspace}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{cite}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{mhchem}
+\setlength{\headheight}{15pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentrierte Spalten mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbÃ¼ndig mit Breitenangabe
+\pagestyle{fancy}
+
+\lhead{\leftmark} %Textfeld links
+\rhead{} %Textfeld rechts
+
+\setlength{\skip\footins}{10mm}
+\usepackage{lastpage}
+\cfoot{Seite \thepage /\pageref{LastPage}}
+\usepackage{hyperref}
+\hypersetup {
+colorlinks,
+urlcolor=blue,
+linkcolor=blue
+}
+
+\newcommand{\footnoteremember}[2]{%
+  \footnote{#2\label{#1}}
+  \newcounter{#1}
+  \setcounter{#1}{\value{footnote}}%
+}
+\newcommand{\footnoterecall}[1]{%
+  \hyperref[#1]{\footnotemark[\value{#1}]}%
+}
+
+\newcommand{\element}[2]{%
+	$^{#1}$\text{#2}
+}
+
+\newcommand{\ele}[3]{
+	$^{#1}_{#2}$#3
+}
+
+\newenvironment{redtext}{\color{red}}{\ignorespacesafterend}
+
+\addto\captionsngerman{\renewcommand{\figurename}{\textbf{Abb.}}}
+
+\begin{document}
+\singlespacing
+\parindent0pt
+\onehalfspacing
+
+%Titelseite
+
+\begin{titlepage}
+
+\setlength{\unitlength}{1pt}
+
+\begin{center}
+\hbox{}
+
+{\hrule height 2pt \vspace{1cm}}
+{
+{\huge\textsc{Rastertunnelmikroskopie}\\
+               \par}
+\vspace{1cm}
+{\hrule height 2pt}
+
+\vskip 4cm
+Physikalisches Praktikum B \\am \\2. Physikalischen Institut\\
+
+\vspace{1cm}
+
+09.12.2015
+
+}
+
+
+\vspace{3cm}
+
+
+\begin{figure}[h!]
+	\centering
+ \includegraphics[scale=0.2]{grafiken/logo.png}
+\end{figure}
+
+%Bereich für Namen
+
+\begin{flushleft}
+\begin{tabular}{lll}
+& \textbf{Studenten} & \hspace{9cm} \textbf{Betreuer} \\
+& Yushi Nishida  & \hspace{9cm}  Mathias Pörtner \\
+& Pavlo Ignatiev \\
+\end{tabular}
+\end{flushleft}
+
+%Bereich der Subline
+
+
+\vspace{1cm}
+
+{\hrule height 2pt}
+
+\vfill
+
+\end{center}
+
+
+\end{titlepage}
+
+\listoffigures
+\tableofcontents
+
+\newpage
+%================================================================================================================================
+\section{Einleitung}
+\subsection{Funktionsweise eines Tunnelmikroskops}
+Das Tunnerastermikroskop kann durch den Tunneleffekt der Elektronen die Materialoberfl"achen elektrisch leitender Materialen oder auch sehr d"unne Schichten Isolatoren sichtbar machen. Eine Nadelspitze wird in die direkte N"ahe der zu untersuchende Oberfl"ache gefahren, piezo Elemente die die Nadelspitze lenken k"onnen, fahren die Nadelspitze in einen Raster "uber die Probeoberfl"ache ab. Dabei wird nur ein Teil der elektrischen Ladung als Elektronen den Abstand zwischen einer Nadelspitze und der zu analysierende Oberfll"ache "uberqueren k"onnen. Die u"bertragenen Ladungen stehen im direktem Verh"altnis zum Abstand der Nadelspitze und der beschaffenheit der Oberfl"ache. Das Mikroskop besitzt zwei Betriebsmodi, die erste mit der fest eingestellten Spannung, bei der die Nadelspitze so gehalten wird, dass der Strom konstant bleibt. Im anderen Modus wird die Position der Nadelspitze konstant gehalten und die Str"omung wird aufgezeichnet.
+
+\subsection{Tunneleffekt}
+Der Tunnneleffekt wird duch die quantenmehchanischen Eigenschaften der Elektronen erm"oglicht, die sich dabei wie Wellen verhalten. Die Elektronen k"onnen dann mit endlicher Wahrscheinlichkeit ein Potential u"berwinden, f"ur welches gilt $E_{kin}(e^-) < V(z)$, wobei $V(z)$ die H"ohe des Potenzials ist. F"ur das Elektron im Bereich eines Kastenpotenzials k"onnen wir eine Schr"odingergleichung aufstellen:
+\begin{align}
+\frac{\hbar^2}{2m_e}\psi '' + (E - V(z))\psi = 0
+\end{align}
+Mit den Eigenwerten $\lambda_{1,2} = \pm \frac{\sqrt{2m_e(V(z) - E)}}{\hbar}$ lautet die allgemeine L"osung der Gleichung
+\begin{align}
+\psi (z) = A \cdot e^{\lambda_1 z} + B \cdot e^{\lambda_2 z}
+\end{align}
+Eine Fallunterscheidung f"ur Bereiche au"serhalb und innerhalb des Potenzials jeweils eine einlaufende und eine reflektierte Welle im Bereich vor dem Potential, sowie eine exponentiell abfallende Wellenfunktion im Bereich des Potentials (Zerfallskonstante $\kappa = \frac{\sqrt{2m_e(V(z) - E)}}{\hbar}$):
+\begin{align}
+\psi_{II} = A' \cdot e^{- \kappa z} + B' \cdot e^{\kappa z} = A' \cdot e^{- \kappa z}{,} \quad B' := 0
+\end{align}
+F"ur ein Elektron am Punkt $z_0$ messen wir also eine Aufenthaltswahrscheinlichkeit
+\begin{align}
+|\psi(z_0)|^2 = P(z_0) = |\psi(0)|^2 \cdot e^{-2 \kappa z_0}
+\end{align}
+
+\subsection{Rastertunnelmikroskop}
+Der Tunneleffekt wird zur Vermessung der Beschaffenheit einer Festkörperprobe angewendet. Hierfür wird eine leitende Spitze in den Abstand von $z_0$ von ca. 10 \AA{} zur Probe gebracht, und der Tunnelstrom zwischen den beiden wird gemessen. Wir bezeichnen mit Fermi-Niveau die maximale Energie, die ein Fermion im System gleichartiger Fermionen (z. B. Elektronengas) haben kann, wenn das System im Grundzustand ist. Liegen die Spitze und die Probe beide auf gleichem Fermi-Niveau, so ist kein Strom zwischen ihnen messbar. Daher wir an die Spitze eine Spannung angelegt, um die Anzahl unbesetzter Zustände in der Spitze bzw. der Probe zu erhöhen und somit einen Elektronenstrom zu initiieren. Da die Austrittsarbeiten $\Phi$ der Probe und der Spitze unterschiedlich sind, hat das zu tunnelnde Potential keine Rechteckform. 
+
+Die Anzahl der Elektronen, die tunneln können, ist proportional der Anzahl der unbesetzten Zustände im Intervall $\epsilon = eU$. Der Tunnelstrom ist dann zu der Summe über diese Zustände proportional:
+\begin{align}
+I \quad \propto \quad \sum^{E_F}_{E_n = E_F - eU} |\psi_n(0)|^2 \cdot e^{-2 \kappa z_0}
+\end{align}
+Die lokale Zustandsdichte $\rho_{Probe}(0, E_F)$ ist andererseits proportional zu der obigen Summe der Betragsquadrate, und wir können den Ausdruck für Tunnelstrom vereinfachen:
+\begin{align}
+I \quad \propto \quad eU \cdot \rho_{Probe}(0, E_F) \cdot e^{-2 \kappa z_0}
+\label{Tunnelstrom}
+\end{align}
+Der Tunnelstrom hängt also exponentiell von dem Abstand $z_0$ ab, sodass eine sehr empfindliche Messung des Stroms $I(z_0)$ möglich ist und eine atomare Auflösung erreicht werden kann. Um die Oberfläche der Probe abzubilden, wird $z_0$ an jeder Stelle variiert, bis ein messbarer Strom vorliegt.  
+
+Außer der Probentopographie lassen sich auch weitere Eigenschaften vermessen, indem die Spitze über der Probe fixiert wird. Einmal lässt sich die \textit{Zustandsdichte} in der Probe messen, indem der Tunnelstrom $I(V)$ abhängig von der Spannung $V$ an der Spitze aufgenommen wird. Andererseits kann man bei konstanter Spitzenspannung die \textit{Austrittsarbeit} der Probe messen, indem an einem festen Punkt die Spitze weggezogen und dabei der Tunnelstrom gemessen wird. 
+
+Für die letztere sog. \textit{$I(z)-Spektroskopie$} nutzen wir aus, dass der Tunnelstrom exponentiell mit dem Abstand abfällt. Da die Austrittsarbeiten der Spitze und der Probe üblicherweise ungleich sind, in den Koeffizienten $\kappa$ jedoch \textit{eine} Austrittsarbeit eingeht, wird zunächst ein Mittelwert der Austrittsarbeiten der Probe und der Spitze gebildet. 
+\begin{align}
+\phi_{mess} \quad = \quad \frac{\phi_{Probe} + \phi_{Spitze} - eU}{2}
+\end{align}
+\newpage
+In der Gl. (\ref{Tunnelstrom}) können wir die Vorfaktoren durch eine Konstante $c$ ersetzen und die Gleichung anschließend logarithmieren, es ergibt sich der Ausdruck
+\begin{align}
+ln( I(z) ) \quad = \quad ln(c) + 0{,}51 \cdot \sqrt{\phi_{mess} \, [eV]} \cdot z \, [\text{\AA{}}]
+\end{align}
+Dabei rührt der Vorfaktor 0{,}51 von $\frac{\sqrt{2m_e}}{\hbar}$ her. Wir können dann $ln(I(z))$ gegen $z$ auftragen, und die Austrittsarbeit $\phi_{mess}$ aus der Steigung des linearen Fits bestimmen. 
+\newpage
+\subsection{Ladungsdichtewellen auf $TaS_2$}
+Ladungsdichtewellen können am Rand von Brilliounzonen entstehen, dort  treffen sich zwei Wellenfuntionen vom Elektronen, die eine Funktion besitzt einen kleineren Energie, da sie sich näher am Atomrumpf befindet und so mit weniger Coulmb-Potential besitzt. Diese Energiedifferenz führt zu einer Energielücke im Band. Dieser Prozess findet dann immer statt wenn die Verschiebung der Gitteratome weniger Energie freisetzt, als die Verschiebung der Ladungen.
+\newpage
+\section{Versuchsaufbau und Durchführung}
+Der Probenhalter sitzt auf 3 Piezo Elemente, der durch geschickte Spannungsanlegen verschoben werden kann. In der mitte der vom 3 Piezo Elemente befindet sich ein Piezo Element mit dem Nadel f"ur die Ananlyse. Diese ist minimalst beweglich. Die Piezo Elemente liegen auf mehrere Edelstahlplatten die jeweils mit vitons, schwingungsd"ampfende Kunststoffe, gepuffert sind. Eine Spannung von bis zu 10V werden nun angelegt und die Nadelspitze wirkt als erdungspotenzial.
+\subsection{Piezo-Element}
+Ein Piezo Element besteht aus nichtmetallischen Verbindungen, die sich unter mechanischem Druck, elektrisch polarisieren k"onnen. Verbindungen ohne Inversionssymetrie auf einer Achse k"onnen piezo-elektrisch sein. Gibt man es Spannung, verformt es sich.
+
+\newpage
+\section{Versuchsergebnisse und Diskussion}
+
+\newpage
+\section{Zusammenfassung}
+
+\end{document}
+

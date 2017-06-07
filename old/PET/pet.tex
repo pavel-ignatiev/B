@@ -1,0 +1,457 @@
+ \documentclass[12pt, a4paper]{article}
+\usepackage{geometry}
+\geometry{a4paper,left=2.0cm,right=2.0cm, top=2.5cm, bottom=3.0cm}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{floatflt}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfig}
+\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{extarrows}
+\usepackage{enumerate}
+\usepackage{mathabx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{xspace}
+\usepackage{dsfont}
+\usepackage{pifont}
+\usepackage{cite}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{mhchem}
+\setlength{\headheight}{15pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentrierte Spalten mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbÃ¼ndig mit Breitenangabe
+\pagestyle{fancy}
+
+\lhead{\leftmark} %Textfeld links
+\rhead{} %Textfeld rechts
+
+\setlength{\skip\footins}{10mm}
+\usepackage{lastpage}
+\cfoot{Seite \thepage /\pageref{LastPage}}
+\usepackage{hyperref}
+\hypersetup {
+colorlinks,
+urlcolor=blue,
+linkcolor=blue
+}
+
+\newcommand{\footnoteremember}[2]{%
+  \footnote{#2\label{#1}}
+  \newcounter{#1}
+  \setcounter{#1}{\value{footnote}}%
+}
+\newcommand{\footnoterecall}[1]{%
+  \hyperref[#1]{\footnotemark[\value{#1}]}%
+}
+
+\newcommand{\element}[2]{%
+	$^{#1}$\text{#2}
+}
+
+\newcommand{\ele}[3]{
+	$^{#1}_{#2}$#3
+}
+
+\newenvironment{redtext}{\color{red}}{\ignorespacesafterend}
+
+\addto\captionsngerman{\renewcommand{\figurename}{\textbf{Abb.}}}
+
+\begin{document}
+\singlespacing
+\parindent0pt
+\onehalfspacing
+
+%Titelseite
+
+\begin{titlepage}
+
+\setlength{\unitlength}{1pt}
+
+\begin{center}
+\hbox{}
+
+{\hrule height 2pt \vspace{1cm}}
+{
+{\huge\textsc{Positronen-Emissions-Tomografie}\\
+               \par}
+\vspace{1cm}
+{\hrule height 2pt}
+
+\vskip 4cm
+Physikalisches Praktikum B \\am \\Kernphysikalischen Institut\\
+
+\vspace{1cm}
+
+02.11.2015
+
+}
+
+
+\vspace{3cm}
+
+
+\begin{figure}[h!]
+	\centering
+ 	\includegraphics[scale=0.2]{grafiken/logo.png}
+\end{figure}
+
+%Bereich für Namen
+
+\begin{flushleft}
+\begin{tabular}{lll}
+& \textbf{Studenten} & \hspace{9cm} \textbf{Betreuer} \\
+& Yushi Nishida  & \hspace{9cm}   Jan Mayer  \\
+& Pavel Ignatiev \\
+\end{tabular}
+\end{flushleft}
+
+%Bereich der Subline
+
+
+\vspace{1cm}
+
+{\hrule height 2pt}
+
+\vfill
+
+\end{center}
+
+
+\end{titlepage}
+
+\listoffigures
+\newpage
+\tableofcontents
+
+\newpage
+%================================================================================================================================
+
+%================================================================================================================================
+\section{Theoretische Grundlagen}
+\subsection{Kernzerfall und Strahlungsemission}
+%Zwei grundlegende natürliche Kernzerfallsarten sind 
+%\item \textbf{$\alpha$-Zerfall}\\
+%Bei dieser Zerfallsart wandelt sich ein Atomkern in einen anderen Atomkern um unter Emission eines $\alpha$-Teilchens, d.h. eines \ce{^{4}_{2}He}-Kerns. Die Zerfallsgleichung lautet dabei:
+%\begin{align}
+%A(Z,N) \longrightarrow A(Z-2,N-2) + \ce{^{4}_{2}He}
+%\end{align}
+\subsubsection{$\beta$-Zerfall und Elektroneneinfang (EC)}
+Beim \textit{Beta-Zerfall} erfolgt eine Verwandlung eines Neutrons in einen Proton unter Emission eines Elektrons im Falle des $\beta^-$-Zerfalls
+\begin{align}
+A(Z,N) \longrightarrow A(Z+1, N-1) + e^- + \bar{\nu_e}
+\end{align}
+bzw. eine Verwandlung eines Protons in einen Neutron unter Emission eines Positrons im Falle eines $\beta^+$-Zerfalls
+\begin{align}
+A(Z,N) \longrightarrow A(Z-1, N+1) + e^+ + \nu_e
+\end{align}
+\textit{Elektroneneinfang} erfolgt durch Absorption eines Elektrons der inneren Atomschale (z. B. K-Schale) durch den Kern, wobei sich eines der Kernprotonen in ein Neutron umwandelt und der Kern zum gleichen Tochterkern zerfällt, wie es bei $\beta^+$-Zerfall der Fall wäre: 
+\begin{align}
+A(Z, N) \longrightarrow A(Z-1, N+1) + \nu_e
+\end{align}
+Allerdings werden dabei nur Neutrinos und keine Elektronen emittiert, was EC f"ur unseren Versuch unbrauchbar macht, wenn wir Elektronenlavinen erzeugen wollen. 
+
+%\subsection{$\gamma$-Strahlung}
+%Emission von $\gamma$-Strahlung kann den natürlichen Zerfall begleiten und erfolgt bei Abregung des Atoms vom Zustand mit Energie $E_i$ in einen Zustand niedrigerer Energie $E_f$, wobei ein Photon der Energie $E_{\gamma} = E_i - E_f$ ausgestrahlt wird. Auch bei Annihilation von $e^+$ und $e^-$ werden $\gamma$-Quanten emittiert. Gamma- und Röntgenstrahlung unterscheiden sich im Ort ihrer Entstehung, ihre Energien können sich jedoch überschneiden und betragen bis 137 keV bei Röntgenstrahlen bzw. größer bei $\gamma$-Strahlen.
+%Schwache Gammastrahlung wird durch das Kern emittiert und kann "ahnliche oder gleiche Energie besitzen, wie harte R"ontgenstrahlung, welche jedoch beim "Ubergang von Elektronen zwischen Atomschalen durch sie emittiert wird.
+%Beim atomaren Niveauwechsel "andert sich nicht nur die Zustandsenergie, sondern auch der Drehimpuls des Atoms, wobei folgende Bedingung gilt:
+%\begin{align}
+%|I_i - I_f| \leq I \leq I_i + I_f
+%\end{align}
+%\subsection{Quantenzahlen}
+%Quantenzahlen sind Eigenschaften, die die Zust"ande von Teilchen bzw. von Atomen eindeutig unterscheiden lassen. So haben Fermionen halbzählige Spins und Bosonen ganzzahlige. Für Fermionen gilt das Pauli-Prinzip, f"ur Bosonen jedoch nicht.
+%\begin{itemize}
+%\item \textbf{Hauptquantenzahl} $n = 1,\,2,\,3...$ gibt die Schale des Elektrons an, wo sich dieser am wahrscheinlichsten aufh"alt
+%\item \textbf{Drehimpulsquantenzahl} $l = 0,\,1,\,2... < n$ gibt die Form des Atomorbitals an
+%\item \textbf{magnetische Drehimpulsquantenzahl} $m_l = \frac{L_z}{\hbar} \in [-l, l]$ kennzeichnet die z-Komponente des Bahndrehimpulses von Elektronen in Einheiten $\hbar$
+%\item \textbf{magnetische Spinquantenzahl} $m_s = \frac{s_z}{\hbar}$ gibt schlie"slich die Orientierung des Elektronenspins bzgl. der z-Achse an, wobei $s_z$ hier die Projektion des Teilchenspins auf die z-Achse ist. F"ur Elektronen betr"agt sie $s_z = \pm \frac{1}{2} \hbar$, entsprechend auch $m_s = \pm \frac{1}{2}$
+%\end{itemize}
+%\newpage
+%\subsection{Wechselwirkung von $\gamma$-Quanten mit Materie}
+%\subsubsection{Photoeffekt}
+%Der Photoeffekt beschreibt Absorption von einfallenden Strahlungsquanten durch Elektronen der Atomh"ulle, welche dabei ausreichend Energie bekommen, um die H"ulle zu verlassen. Photonen mit Energie gr"o"ser als Ionisationsenergie der jeweiligen Schale, wie z. B. ein niedrigenergetischer Gammastrahl, eignen sich gut dafür. Beim Photoeffekt sto"sen das Photon und das Elektron inelastisch, und das Photon gibt seine Energie vollst"andig ab, d. h. wir \textit{absorbiert}.
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.15]{grafiken/vorbereitung/photoeffect.png}
+%	\caption[Photoeffekt]{Photoeffekt}
+%	\label{fig:photoeffect}
+%\end{figure}
+%\subsubsection{Compton-Streuung}
+%Compton-Streuung bezeichnet einen inelastischen Stoß ohne vollst"andige Energieabgabe zwischen einem Photon und einem Elektron, d.h. das Photon wird am Elektron \textit{gestreut}. Der Energie"ubertrag ist dabei abh"angig vom Streuwinkel und wird maximal bei einem frontalen Sto"s mit dem Streuwinkel $\pi$. Das Photon gibt einen Teil seiner Energie an das Elektron ab und die zugeh"orige Wellenl"ange des Photons wird daher gr"o"ser. 
+%\begin{align}
+%\Delta\lambda=\lambda_C(1-cos(\phi))
+%\end{align}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.4]{grafiken/vorbereitung/comptonstreuung.png}
+%	\caption[Komptonstreuung]{Komptonstreuung}
+%	\label{fig:comptonscatter}
+%\end{figure}
+\subsubsection{Elektron-Positron-Paarbildung und Annihilation}
+Photonen mit Energien gr"o"ser als die Summe der Ruheenergien eines Elektrons und eines Positrons ($2\cdot 511\,keV = 1,022\,MeV$) können ein Elektron-Positron-Paar erzeugen. Das erzeugte Positron annihiliert sehr wahrscheinlich sofort mit diesem oder einem anderem Elektron in der N"ahe, dabei werden antiparallel zwei $\gamma$-Quanten gleicher Energien  $511\,keV$ emittiert. In unserem Versuch sollen die Detektoren solche Quanten empfangen, daher ist es wichtig, solche Quanten von der $\gamma$-Strahlung des Atoms zu unterscheiden.
+%\subsubsection{Lambert-Beer-Gesetz}
+%$\gamma$-Quanten werden durch Materie unterschiedlich stark absorbiert. Das Lambert-Beer-Gesetz beschreibt n"aherungsweise das Absorptionsvermögen $\mu$ eines Materials abhängig von seiner Dicke $x$. $I(x)$ bzw. $I_0$ sind dabei die gemessenen Strahlungsintensit"aten mit bzw. ohne Absorber. Die Kernladungszahl $Z$ des Materials ist daf"ur entscheidend und wir erwarten, dass $\mu$ in erster N"aherung linear mit $Z$ ansteigt.
+%\begin{align}
+%I(x)=I_0*exp(-\mu*x)
+%\end{align}
+\subsection{Kennlinien eines Strahlungsspektrums}
+Ein Spektrum wird sichtbar beispielsweise wenn die absorbierte Intensit"at gegen die Kanalnummer (bzw. zugehörige Energie des Quanten) aufgetragen. Nur bestimmte Peaks des Spektrums entsprechen den $\gamma$-Quanten, welche bei atomaren Zustands"uberg"angen emittiert werden. Daher ist es wichtig, solche Quanten von allen anderen, denen andere Erscheinungen wie Paarerzeugung bzw. Compton-Effekt zugrunde liegen, zu unterscheiden.
+\subsubsection{Photopeak}
+Der Photopeak bzw. Full-Energy-Peak entspricht der maximalen Energieabgabe durch das Photon an den Detektor, so dass die gesamte Übergangsenergie des Atoms detektiert wird. Dies kann der Fall sein, wenn der $\gamma$-Quant sofort vollständig beim Photoeffekt absorbiert wird, aber auch durch mehrere hintereinander folgende Wechselwirkungen (Paarbildung, Compton-Streuung und Photoeffekt), falls diese koinzident im Detektor stattfinden.
+\subsubsection{Compton-Kontinuum}
+Je nach dem Streuwinkel gibt das $\gamma$-Quant unterschiedliche Energien an den Elektron ab. Der Streuwinkel variiert zwischen $0$ und $\pi$ und ist statistisch verteilt, daher ergibt sich eine waagerechte Spektrumlinie im Bereich $E_{\gamma}(FEP)$ - $E_{Compton}(\pi)$ bis $E_{\gamma}(FEP)$ - $E_{Compton}(0)$, deren Energiewerte durch folgende Beziehung gegeben sind:
+\begin{align}
+	E_{Compton}(\phi)=\frac{E_{\gamma}(FEP)}{1+\frac{E_{\gamma}(FEP)}{m_e  c^2}(1-\cos(\phi))}
+	\label{Comptonformel}
+\end{align}
+\subsubsection{Compton-Kante}
+Die abrupte Kante am Ende des Compton-Kontinuums nennt man Compton-Kante. Bei dieser Kante wird Compton-Streuung maximal, was einem Streuwinkel $\pi$ entspricht. \autoref{Comptonformel} nimmt dann folgende Gestalt an und erlaubt uns, die Lage der Compton-Kante vorherzusagen:
+\begin{align}
+	E_{Compton}(\pi)=\frac{E_{\gamma}(FEP)}{1+\frac{E_{\gamma}(FEP)}{m_e  c^2}(1-\cos(\pi))} = \frac{E_{\gamma}(FEP)}{1 + 2 \cdot \frac{E_{\gamma}(FEP)}{m_e  c^2}}
+	\label{Comptonmaximal}
+\end{align}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{grafiken/vorbereitung/compton.png}
+	\caption{Compton-Kante}
+	\label{fig:Kompton}
+\end{figure}
+\subsubsection{Single-, Double-Escape-Peak, 511-keV-Linie}
+Gammaquanten hoher Energien können eine Paarbildung im Detektor verursachen, sodass ein Positron und ein Elektron entstehen. Der Positron kann schnell wieder mit einen Elektron in der Nähe wechselwirken. Dabei zerfällt es meistens in 2 Gammaquanten. Verlässt ein Gammaquant nun den Detektor, so entsteht das Single-Escape-Peak; ein Double-Escape-Peak entsteht, falls beide Quanten den Detektor verlassen.
+Die 511-keV Linie wird durch eine Paarbildung außerhalb des Detektors verursacht. Dabei fliegt ein Gammaquant aus der Paarerzeugung in den Detektor und wird detektiert.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{grafiken/vorbereitung/escline.png}
+	\caption{Escape-Peaks}
+	\label{fig:escapeline}
+\end{figure}
+\subsubsection{Rückstreupeak}
+Rückstreupeaks entstehen schließlich, wenn Gammaquanten vor dem eintreffen auf den Detektor bereits gestreut werden.
+%\section{Der Halbleiterdetektor}
+%\subsection{Halbleiter}
+%Ein Halbleiter besteht aus einem Material mit einer Valenzlücke zwischen der Valenz- und Leitungsband.
+%Diese energetische Lücke muss überwunden werden damit ein Strom fließen kann.
+%Durch die Dotierung (Einbau) von Fremdatomen kann die Anzahl an Defekt-Elektronen/ungebundene Elektronen erhöht werden, was zu einer verbesserten Leitungseigenschaft führt.
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.6]{grafiken/vorbereitung/dotierung.png}
+%	\caption{Dotierung eines Halbleiters}
+%	\label{fig:Dotierung}
+%\end{figure}
+%\subsection{Der pn-Übergang}
+%Wird ein p-dotierter Halbleiter mit einen n-dotierten Halbleiter zusammengebracht findet ein ausgleich der Ladungen statt. Schließt man es nun in die Sperrichtung an, das p-Schicht wird an das negative-Pol angeschlossen, stehen sich die Ladungen am Verbindungsbereich konzentriert gegenüber. Diesen Bereich nennt man die Verarmungszone.
+%\subsection{Detektorgeometrie}
+%Es gibt 2 gängige Detektorgeometrien. Den planaren und koaxialen Detektor.
+%Bei der planaren Aufbau hat man eine Schicht p-dotierte Halbleiter und dadrauf eine Schicht aus n-dotierte Halbleiter glatt angebracht, an beiden Schichten ist jeweils die entgegengerichtete elektrische-Spannung angebracht. Die Halbleiter arbeiten im Sperrichtung. Die koaxiale Geometrie biegt den planaren in einen U-Form, so dass die aktive Zone vom Detektor doppelt so dick werden kann.
+%\newpage
+%\subsection{Elektronik}
+%Eine in sperrichtung angeschlossener Halbleiter dient als Detektor, hier ein HighPurity-Germanium Einkristall Halbleiter, gekühlt mit Stickstoff um thermisches Rauschen in der Elektronik zu minimieren.
+%Der $\gamma$-Quant wechselwirkt mit der Verarmungszone des Detektors. Trifft dort ein $\gamma$-Quant ein kann die Compton-Streuung, der Photoeffekt sowie die Paarbildung stattfinden, oder der $\gamma$-Quant kann auch ohne eine Wechselwirkung durch die Zone fliegen.
+%Wird ein Elektron getroffen und aus der Hülle geschlagen wandert es zu den Außenkontakten, dabei ionisiert es andere Atome auf dem Weg und eine Lawine an Ladungen enstehen. Die Ladungen werden in einen Kapazitator für einen Zeitintervall aufgeladen und als ein Puls weitergeschickt. Der Puls ist aber zu schwach um es direkt verarbeiten zu können. So wird es erstmal in einen Vorverstärker verstärkt und zusätzlich aufbereitet. Das Signal wird danach an einem ADC geschickt der die Signale in diskret nummerierte Kanäle aufteilt um es am PC visuell betrachten zu können.
+%\subsection{Detektoraufbau}
+%\subsubsection{Energieauflösung}
+%Die Energieauflösung über einen Detektor sagt aus, wie genau es den Quanten ihre Energie zuordnen kann. Um eine gute Energieauflösung zu bekommen muss die Halbwertsbreite des Full-Energey-Peaks minimal sein. Die Beziehung zwischenhttps://webmail.uni-koeln.de/imp/dynamic.php?page=mailbox#msg:SU5CT1g;6163 der Halbwertsbreite am FEP und Energieauflösung lauten:
+%\begin{align}
+%R=\frac{Halbwertsbreite(FEP)}{E_\gamma}
+%\end{align}
+%\subsubsection{Nachweiseffizienz}
+%Die Nachweiseffizienz ist das Verhältnis zwischen der von der Quelle emitterten Quanten und vom Detektor registrierte Quanten. Da es aber von sehr vielen Parametern abhängt wenn man alle emittierten Quanten betrachten muss hat man häufig auch das Peakeffizienz der sich nur die Quanten aus dem Photopeak zum Vergleich nimmt. 
+%\begin{align}
+%\epsilon(E_\gamma)=\frac{detektierte Pulse(E_\gamma)}{emittierte Pulse(E_\gamma)}
+%\end{align}
+
+%================================================================================================================================
+\subsection{Szintillatoren}
+Ein Szintillator besteht aus einem Material/Molekül der, nach Anregung durch Stöße mit Photonen (Photoeffekt), Comptonstreuung oder ionisierten Teilchen, Licht aussendet. Dies geschieht durch einen extra Band zwischen dem Valenz-und Leitungsband, dessen Energiedifferenz dem sichtbaren Spektrum entspricht. Das emittierte Licht wird von einen Photomultiplier oder einer Leuchtdiode erfasst, so wird die Intensität des Photons oder ionisierten Teilchens bestimmt.\\
+Vorteile der Szintillatoren gegenüber einerm Halbleiterdetektor liegen an der besseren Ansprechzeit und Effizienz. Dafür leidet jedoch die Energieauflösung.
+\subsection{Photomultiplier}
+Photonen lösen aus der Photokathode Elektronen aus. Diese ausgelösten Elektronen fliegen jetzt auf eine in Serie geschaltete Dynoden-Anordnung. Jede Dynode hat nach der Reihe eine höhere Spannung.
+So lösen auf dem Dynoden auftreffende Elektronen aus der Dynode zusätzliche Elektronen heraus, die von der nächsten Dynode zur ihr beschleunigt werden.
+\subsection{Verstärker}
+Ein Verstärker erhöht die Amplitude des Eingangssignals. Ein \textit{Vorverstärker} wird verwendet, um schwache Signale des Detektors zu verstärken, so dass die Signale weniger durch Rauschen und andere Störungen beeinflusst werden.
+Der \textit{Hauptverstärker} soll ein Signal möglichst sauber oder steil verstärken.
+Als Vorverstärker kommt ein TFA zum Einsatz, und für den Hauptverstärker ein Spectroscopy Amplifier.
+\subsection{Diskriminatoren}
+Der Diskriminator verarbeitet den Eingangssignal und gibt diskrete Pulse für einen definierten Ereignis heraus, wobei die Amplitude des Eingangssignals eine bestimmte Schwelle erreichen bzw. nicht überschreiten muss. Will man ein Koinzidenzereignis alleine durch das setzen einer festen Schwelle registrieren, so treten Probleme auf, da die Amplituden unterschiedlich hoch sein könnten und somit werden die Zeitpunkte der Ereignisauslösung unterschiedlich sein, wenn die gleiche Schwelle eingestellt ist. Bei unterschiedlich eingestellten Schwellen ist es noch gravierender.\\
+Aus diesem Grund wählt man einen Eingangssignal und invertierte diesen. Der zweite unbearbeitete Signal wird dann nach hinten verschoben. Nun wird das erste Signal gestaucht und mit dem ersten Signal addiert. Es entsteht nun eine Amplitude im negativen und eine im positiven Bereich. Jetzt wird genau der Nulldurchgang zwischen der ersten Amplitude zur zweiten als der Zeitpunkt des Ereignisses festgelegt. Diese Art von Diskriminatoren werden \textit{Constant Fraction Discriminator} genannt.
+\subsection{Time-to-Amplitude Converter}
+Der TAC Konverter besitzt zwei Eingänge, ein für den Start- und ein für den Stopsignal. Er wandelt die Zeit zwischen den Eingängen des Startsignals und des Stopsignals in elektrische Ladung um. Dafür wird nach dem Eingang des Startsignals ein Kondensator bei einem konstantem Strom aufgeladen, bis der Stopsignal eintrifft.
+\subsection{Delay}
+Da im Idealfall bei einer Koinzidenzmessung die Strahlen an beiden Detektoren gleichzeitig ankommen können und somit auch der Start- und Stopsignal gleichzeitig ausgesendet werden, nimmt man für den Stopsignal einen willkürlichen Delay an. Bis 100ns kann man dies mit einem Koaxialkabel schaffen. Für längere Delays werden elektrische Schaltkreise benötigt, damit die Störungen nicht beliebig groß werden.
+\newpage
+\section{Versuchsdurchführung und Auswertung}
+Eine quadratische drehbare Platte mit einer Drehachse im Zentrum und schachbrettweise verteilten Befestigungslöchern für die radioaktiven Quellen befindet sich zwischen zwei gegenüberliegenden unbeweglichen Szintillatordetektoren. Als Quelle verwenden wir das $^{22}$Na. Wir untersuchen zunächst die charakteristischen Signale der elektronischen Bestandteile des Aufbaus. Als nächstes bestimmen wir die Ortsauflösung der Koinzidenzmessung, d.h. die Empfindlichkeit des Aufbaus gegenüber der Verschiebung bzgl. der line of response. 
+Dann können wir die gemessene Ortsauflösung bei der Suche nach radioaktiven Quellen in einer verschlossenen Truhe mittels PET verwenden. Schließlich möchten wir die Kollinearität der Annihilationsstrahlung nachweisen, und untersuchen daher die Intensitätsabhängigkeit von der Drehung eines Detektors bzgl. der line of response.
+\subsection{Vorverst"arkersignal}
+Die Quelle wird in die Mitte der Platte platziert. Das Signal vom Detektor wird zunächst mit Hilfe eines Vorverstärkers verstärkt, sodass Verluste im Kabel auf dem weiteren Weg des Signals möglichst klein relativ zu der Amplitude sind. Ausgabe des Vorverstärkers besitzt eine Amplitude von 2,4 V und fällt innerhalb von ca. 200 $\mu$s exponentiell ab. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.7]{grafiken/auswertung/preamplifier.JPG}
+	\caption{Vorverstärkersignal}
+	\label{fig:preamp_sig}
+\end{figure}
+\newpage
+\subsection{Hauptverstärkersignal}
+Die Quelle bleibt an der selben Position aber nun schließen wir das Oszilloskop an den  Hauptverstärker, welcher aus zwei Komponenten besteht. Die erste Komponente heißt Timing Filter Amplifier )TFA) und dient dazu, das Signal mit möglichst kurzer Anstiegsflanke zu produzieren. Genau das können wir am Bild sehen: Im Vergleich zum Vorverstärkersignal dauert das Signal von TFA nur rund 1 $\mu$s, klingt also 200-mal schneller ab. Die zweite Komponente des Hauptverstärkers heißt Spectroscopy Amplifier (SA) - dieser sorgt für die weitere Vergrößerung der Amplitude, und zwar möglichst proportional zum Eingangssignal. Am Oszillogramm lesen wir ab, dass der SA die Amplitude um das 6,25-fache vergrößert hat. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.7]{grafiken/auswertung/tfa.JPG}
+	\caption{TFA-Signal}
+	\label{fig:tfa_sig}
+\end{figure}
+\newpage
+\subsection{Diskriminatorsignal}
+Das Signal vom Hauptverstärker wird nun an einen Diskriminator weitergeleitet. Diskriminator soll im Allgemeinen ein logisches Signal ausgeben, wenn die Amplitude des Eingangsignals eine vorgegebene Schwelle überschreitet. Auf diesem Weg gibt es zwei Probleme, die behandelt werden müssen:
+\begin{itemize}
+\item Zwei koinzidente Signale verschiedener Amplitude erreichen die Schwelle zu verschiedenen Zeiten, sodass die logischen Ausgangssignale zeitlich verschoben sind und einen Anschein von zwei nicht-koinzidenten Detektorsignalen erwecken ("walk").
+\item Statistische Schwankungen des Signals bzw. das Untergrundrauschen führen zur Ausgabe zweier zeitlich verschobener logischer Signale, welche in der Tat zu einem Eingangssignal angehören ("jitter"). 
+\end{itemize}
+Constant Fraction Discriminator (CFD) eliminiert diese Probleme folgendermaßen. Das Signal wird in zwei Zweige aufgespalten. Beim ersten Zweig wird das Signal um die Zeit $T$ verzögert, beim zweiten  wird es invertiert und um einen Faktor kleiner 1 gestaucht. Anschließend werden beide Zweige addiert und das logische Signal wird dann ausgegeben, wenn der Nulldurchgang erreicht wird. Das Oszillogramm zeigt nun zwei Signale: Oben (orange) wurde das Eingangssignal auf die beschriebene Weise transformiert, rot ist der Nulldurchgang des Signals gekennzeichnet; unten (türkis) ist das logische Signal sichtbar, dessen linke Kante (Anfang) mit dem Nulldurchgang des transformierten Eingangssignals zusammenfällt. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.5]{grafiken/auswertung/discriminator.JPG}
+	\caption{Diskriminatorsignal}
+	\label{fig:disc_sig}
+\end{figure}
+\newpage
+\subsection{Ortsaufl"osung der Koinzidenzmessung}
+F"ur unsere weiteren Messungen m"ochten wir herausfinden, wie die Lage der Quelle bzgl. der Line of Response die Koinzidenzz"ahlrate beeinflusst. Wir positionieren die Quelle zuerst mittig auf dem Wagen, verschieben diesen dann mit einer Schrittweite von 1 $\pm$ 0.5 mm und z"ahlen in jedem Schritt die Koinzidenzen f"ur 60 s. Wir sch"atzen den Fehler f"ur $N$ Koinzidenzen durch $\sqrt{N}$ ab. Es ergeben sich folgende Messwerte: 
+\begin{table}[H]
+\caption{Ortsaufl"osung}
+\centering
+\begin{tabular}{c | c c c c c c c c c c}
+Position [mm] & 16 & 15 & 14 & 13 & 12 & 11 & 10 & 9 & 8 & 7 \\
+\hline
+Ereigniszahl & 29 & 54 & 42 & 52 & 64 & 67 & 87 & 96 & 103 & 181 \\
+\hline \hline
+Position [mm] & 6 & 5 & 4 & 3 & 2 & 1 & 0 & -1 & -2 & -3 \\
+\hline
+Ereigniszahl & 424 & 900 & 676 & 298 & 109 & 94 & 91 & 78 & 84 & 59 \\
+\end{tabular}
+\end{table}
+Wir tragen diese Werte graphisch auf und fitten sie mit einer Gau"skurve 
+\begin{align}
+f(x) &= y_0 + A\cdot \sqrt{\frac{2}{\pi \cdot \sigma^2}} \cdot e^{-2 \cdot (\frac{x - x_c}{\sigma})^2} \\
+y_0 = 82 \pm 7, \quad A = (2070 \pm 68)&\,\text{mm}	, \quad x_c = (4.74 \pm 0.03)\,\text{mm}, \quad \sigma = (2.03 \pm 0.07)\,\text{mm}
+\end{align}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.27]{grafiken/auswertung/fwhm.png}
+	\caption{Bestimmung der Ortsaufl"osung}
+	\label{fig:Aufl"osung}
+\end{figure}
+F"ur die Halbwertsbreite ergibt sich dann
+\begin{align}
+\sigma_{FWHM} = \sigma \cdot \sqrt{2 \cdot \ln 2} = (2.39 \pm 0.08)\, \text{mm}
+\end{align}
+\newpage
+\subsection{PET-Scan der Truhe}
+In diesem Abschnitt bestimmen wir mittels PET die Position von einer (oder mehreren) \ce{^{22}Na}-Quellen in einer verschlossenen Truhe. Hierf"ur scannen wir die Truhe l"angs einer wohldefinierten Richtung (x-Richtung), dann senkrecht dazu (y-Richtung) und dann um 45° gedreht, um die Position der Quellen auf dem Gitter zu ermitteln. An jeder Stelle messen wir die Zahl der Koinzidenzen f"ur 60 s. L"angs der x- bzw. der y-Achse gehen wir mit dem Schritt von $d_1 = 10 \pm 0.5\,mm$, l"angs der z-Achse mit dem Schritt $d_2 = 7.1 \pm 0.5\,mm$.
+\begin{table}[H]
+\caption{PET-Scan}
+\centering
+\begin{tabular}{c | c c c c c c c c c c}
+Position	& $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ & $x_6$ & $x_7$ & $x_8$ & $x_9$ & $x_{10}$			\\
+\hline
+Messwert	& 8		& 6		& 15	& 13	& 31	& 758	& 29	& 15	& 9		& 2					\\
+\hline\hline
+Position	& $y_1$ & $y_2$ & $y_3$ & $y_4$ & $y_5$ & $y_6$ & $y_7$ & $y_8$ & $y_9$ & $y_{10}$			\\
+\hline
+Messwert	& 10	& 58	& 848	& 38	& 9		& 9		& 8		& 7		& 5		& 3					\\
+\hline\hline
+Position	& $z_1$  & $z_2$  & $z_3$  & $z_4$  & $z_5$  & $z_6$  & $z_7$  & $z_8$  & $z_9$  & $z_{10}$	\\
+\hline
+Messwert	& 3		 & 4	  & 7	   & 14	    & 20	 & 83	  & 509	   & 69	    & 20	 & 7				 \\
+Position	& $z_{11}$ & $z_{12}$ & $z_{13}$ & $z_{14}$ & $z_{15}$ & $z_{16}$ & $z_{17}$ & $z_{18}$ & $z_{19}$ & -\\
+\hline
+Messwert	& 7		 & 9	  & 8	   & 10		& 6		 & 5	  & 2	   & 4		& 1		 & -		\\
+\end{tabular}
+\end{table}
+Nun multiplizieren wir die Z"ahlraten f"ur x- und y-Richtung und stellen dieses Zwischenergebnis graphisch dar. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.9]{grafiken/auswertung/truhe_2d.png}
+	\caption{Scan der Truhe, ohne Diagonalmessung}
+	\label{fig:Truhe_2d}
+\end{figure}
+Wir vermuten, dass an den Stellen (x$_6$ - y$_3$) und (x$_3$ - y$_3$) zwei Quellen stark unterschiedlicher Intensit"aten ($\frac{I_{6,3}}{I_{3,3}} = \frac{642874}{43248} = 14.9)$ vorliegen. "Uberlagerung mit der Diagonalmessung soll Aufschluss dar"uber geben, ob dies in der Tat zwei Quellen sind bzw. sich in der Truhe nur eine Quelle befindet. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{grafiken/auswertung/truhe_3d.png}
+	\caption{Scan der Truhe, mit Diagonalmessung}
+	\label{fig:Truhe_3d}
+\end{figure}
+Jetzt k"onnen wir mit Sicherheit sagen, dass sich die einzige radioaktive Quelle in der Truhe an der Stelle (x$_6$ - y$_3$) bzw. (5 mm, -25 mm) befindet. 
+\newpage
+\subsection{Winkelabh"angigkeit}
+In diesem letzten Versuchsteil sollen wir "uberpr"ufen bzw. nachweisen, dass die Koinzidenten $\gamma$-Quanten aus der e$^+$ - e$^-$ - Annihilation kollinear sind. Hierf"ur stellen wir die CFDs zuerst so ein, dass die 511-keV-Quanten zwischen der unteren und der oberen Energieschwelle der beiden Detektoren liegen. Im zweiten Fall wird ein CFD auf 511 keV eingestellt, der andere auf 1275 keV (daf"ur m"ussen wir die jeweilige Schwelle des zweiten CFD nach oben verschieben). Daraufhin positionieren wir die Quelle auf der line of response m"oglichst genau und sollten darauf achten, dass diese dann nicht versetzt wird. Nun lassen wir einen der Detektoren fest stehen, verdrehen jedoch den anderen Detektor mit einer Schrittweite von 0.5° bzgl. der line of response. Bei jedem Schritt messen wir die Anzahl der Koinzidenzen innerhalb von 30 s. Den Fehler f"ur die Winkelmessung sch"atzen wir mit 0.3°, f"ur die Ereigniszahl $N$ mit $\sqrt{N}$ ab. Wir fassen die gemessenen Werte tabellarisch sowie graphisch zusammen:
+\begin{table}[H]
+\caption{Beide Detektoren auf 511 keV eingestellt}
+\centering
+\begin{tabular}{c | c c c c c c c c c c c}
+Winkel [°] & -5 & -4.5 & -4 & -3.5 & -3 & -2.5 & -2 & -1.5 & -1 & -0.5 & 0 \\
+\hline
+Ereigniszahl & 96 & 148 & 262 & 327 & 458 & 476 & 383 & 296 & 201 & 128 & 129 \\
+\hline \hline
+Winkel [°] & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5 & 4 & 4.5 & 5 & -\\
+\hline 
+Ereigniszahl & 67 & 53 & 50 & 40 & 45 & 43 & 48 & 43 & 30 & 39 & -\\
+\end{tabular}
+\end{table}
+In diesem Fall werden nur $\gamma$-Quanten aus der Annihilation detektiert, welche im Idealfall kollinear ausgestrahlt werden. Wir erwarten hier deshalb eine Gau"s-Verteilung der Intensit"aten um 0°, falls die Quelle richtig positioniert wurde. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{grafiken/auswertung/winkel_511kev.png}
+	\caption{Kollinearit"at der Annihilationsstrahlung}
+	\label{fig:winkel_511kev}
+\end{figure}
+Wir entnehmen dem Graph, dass die Ereigniszahlen gem"a"s unserer Erwartung in der Tat um einen Maximum bei (-2.59 $\pm$ 0.04)° gau"sverteilt sind; dieser Maximum liegt nicht bei 0°, weil wir w"ahrend der Messung den Wagen versetzt haben.\\
+Nun betrachten wir den zweiten Fall, wo der zweite Detektor $\gamma$-Quanten aus dem Zerfall von $^{22}$Ne in den Grundzustand detektiert. Wir erwarten hierbei keine Winkelabh"angigkeit, weil der Zerfall eines angeregten Zustandes in erster N"aherung isotrop erfolgt. Alle m"oglichen Richtungen sind hier also gleich verteilt.
+\begin{table}[H]
+\caption{Detektoren auf 511 keV bzw. 1275 keV eingestellt}
+\centering
+\begin{tabular}{c | c c c c c c c c c c c}
+Winkel [°] & -5 & -4.5 & -4 & -3.5 & -3 & -2.5 & -2 & -1.5 & -1 & -0.5 & 0 \\
+\hline
+Ereigniszahl & 0 & 0 & 2 & 2 & 2 & 0 & 4 & 2 & 4 & 0 & 3 \\
+\hline \hline
+Winkel [°] & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5 & 4 & 4.5 & 5 & - \\
+\hline 
+Ereigniszahl & 0 & 0 & 0 & 0 & 2 & 2 & 2 & 3 & 2 & 1 & - \\
+\end{tabular}
+\end{table}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{grafiken/auswertung/winkel_gesamt.png}
+	\caption{Koinzidenz der Annihilation und des $\gamma$-Zerfalls von $^{22}$Na}
+	\label{fig:winkel_511kev}
+\end{figure}
+Anhand des zweiten Diagramms vermuten wir, dass im Falle von Strahlen verschiedener Energie keine ausgeprägte Winkelabhängigkeit vorliegt. Da uns nur wenige Messwerte vorliegen, lässt sich die Vermutung erst durch eine längere Messung widerlegen bzw. bestätigen.
+\newpage
+%================================================================================================================================
+%================================================================================================================================
+\section{Fazit}
+Die Ergebnisse des durchgeführten Versuchs sind teilweise zufriedenstellend. Einerseits stellten wir anhand von charakteristischen Kurven fest, dass die elektronischen Bestandteile des Aufbaus (Verstärker, TAC, Diskriminator) anständig funktionieren. Weiterhin konnten wir erfolgreich die im weiteren Verlauf benötigte Ortsauflösung unserer Messanordnung bestimmen.\\\\Im nächsten Teil sollten wir herausfinden, an welcher Stelle sich eine radioaktive Quelle in einer verschlossenen Truhe befand. Leider gab es zu der Zeit keine übliche Halterung für die Quelle, daher wurde die Quelle durch den Betreuer in eine Frischhaltefolie eingewickelt und einigermaßen in der Truhe befestigt. Beim Versetzen der Truhe konnte sich die Quelle möglicherweise ebenfalls von der ursprünglichen Stelle versetzen, was unseren Scan erschweren würde. Graphische Auftragung der möglichen Quellenpositionen lieferte jedoch ein ganz eindeutiges Ergebnis, woraus wir auf dennoch gute Befestigung der Quelle schließen möchten.
+Da die Ortsauflösung (bzw. Halbwertsbreite) nur ein Viertel der minimalen Schrittweite bei der Befestigung der Quelle betrug, soll dieses Ergebnis auch gute Genauigkeit besitzen. \\\\
+Die Untersuchung der Winkelabhängigkeit der Annihilationsstrahlung lieferte die erwarteten Ergebnisse: Mit einem Maximum der Intensität bei -2.59° (statt im Idealfall bei 0°, auf der Verbindungsstrecke beider Detektoren) besaß die Winkelabhängigkeit der Intensität eine Gaußform. Die Verschiebung des Maximums erklären wir hier durch die mit Sicherheit stattgefundene zufällige Versetzung der Befestigungsplatte bei der Messung durch einen von uns. Gaußverteilung der Intensitäten um die Verbindungsstrecke bestätigt die erwartete Kollinearität der Annihilationsstrahlung. Die Untersuchung der Intensitätsverteilung bei unterschiedlicher Energieschwelleneinstellung der Detektoren bestätigte ebenfalls, dass in diesem Fall keine spezielle Intensitätsverteilung vorliegt, weil die detektierten $\gamma$-Quanten nicht nur bei der Annihilation, sondern auch beim Kernzerfall von $^{22}$Na erzeugt werden, und der Kernzerfall richtungsunabh"angig erfolgt. 
+
+
+\newpage
+%================================================================================================================================
+\section{Literatur}
+\begin{enumerate}
+\item \textbf{Demtr"oder, W.} Experimentalphysik 4. Kern-, Teilchen- und Astrophysik, 4. aufl. 2014 ed. Springer-Verlag GmbH, Heidelberg, 2013.\\
+\item \textbf{Knoll, G. F.} Radiation Detection and Measurement. 4. Auflage ed. John Wiley \& Sons, New York, 2010.\\
+\item \textbf{Bethge, K.} Kernphysik - Eine Einf"uhrung. Springer Verlag, 2001
+\end{enumerate}
+\end{document}
+
